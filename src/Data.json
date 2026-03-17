@@ -1,0 +1,559 @@
+{
+  "heroData": {
+    "homeOneHero": {
+      "bgImgLink": "/images/background/hero-bg.jpg",
+      "imgLink": "/images/section/hero-img.jpg",
+      "title": "Đỗ Trọng <br /> Tấn",
+      "subTitle": "Xin chào, tôi là",
+      "designation": "Fullstack Developer"
+    },
+    "homeTwoHero": {
+      "imgAuthor": "/images/section/hero-img.jpg",
+      "bgImgLink": "/images/background/hero-bg.jpg",
+      "title": "Xin chào, tôi là <span>Đỗ Trọng Tấn</span>",
+      "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. <br>Chuyên gia E-commerce và ERP, thành thạo VueJS, ReactJS, NestJS, Node.js."
+    },
+    "homeThreeHero": {
+      "imgAuthor": "/images/section/hero-img.jpg",
+      "bgImgLink": "/images/background/hero-bg-1.jpg",
+      "title": "Xin chào, tôi là <span>Đỗ Trọng Tấn</span>",
+      "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. <br>Chuyên gia E-commerce và ERP, thành thạo VueJS, ReactJS, NestJS, Node.js."
+    },
+    "homeFourHero": {
+      "imgAuthor": "/images/section/hero-img.jpg",
+      "bgImgLink": "/images/background/hero-bg-2.jpg",
+      "title": "Xin chào, tôi là <span>Đỗ Trọng Tấn</span>",
+      "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. <br>Chuyên gia E-commerce và ERP, thành thạo VueJS, ReactJS, NestJS, Node.js."
+    }
+  },
+  "aboutData": {
+    "imgLink": "/images/section/about.jpg",
+    "cvPdf": "/images/Resume.pdf",
+    "title": "Xin chào! Tôi là Đỗ Trọng Tấn",
+    "subtitle": "Fullstack Developer",
+    "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. Chuyên gia trong lĩnh vực E-commerce và ERP, có kinh nghiệm thực chiến tích hợp các nền tảng đa quốc gia và nội địa như SAP B1, Shopify, Haravan, Nhanh.vn. Thành thạo xây dựng kiến trúc hệ thống hiệu suất cao sử dụng các công nghệ hiện đại.",
+    "details": [
+      {
+        "title": "Phone",
+        "info": "0969846563"
+      },
+      {
+        "title": "Email",
+        "info": "dotrongtan113@gmail.com"
+      },
+      {
+        "title": "From",
+        "info": "Hà Nội, Việt Nam"
+      },
+      {
+        "title": "Language",
+        "info": "Tiếng Việt, Tiếng Anh"
+      },
+      {
+        "title": "Education",
+        "info": "ĐH Kỹ thuật Công nghiệp Thái Nguyên"
+      },
+      {
+        "title": "Freelance",
+        "info": "Available"
+      }
+    ]
+  },
+  "serviceData": {
+    "services": [
+      {
+        "imgLink": "./images/icon/icon1.png",
+        "title": "Frontend Development",
+        "text": "Phát triển giao diện người dùng với VueJS, ReactJS, Nuxt 3, Next.js. Chuyển đổi thiết kế Figma/Zeplin thành code, tối ưu SEO và Web Accessibility.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "imgLink": "./images/icon/icon2.png",
+        "title": "Backend Development",
+        "text": "Xây dựng hệ thống backend với Node.js (Express, NestJS), PHP (Laravel). Thiết kế RESTful API, microservices, xác thực JWT/OAuth2.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "imgLink": "./images/icon/icon3.png",
+        "title": "E-commerce Solutions",
+        "text": "Triển khai giải pháp thương mại điện tử trên Shopify, Haravan, MedusaJS, WordPress/WooCommerce. Tích hợp thanh toán VNPAY, vận chuyển GHTK.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/icon/icon4.png",
+        "title": "Database & Optimization",
+        "text": "Quản lý và tối ưu hóa cơ sở dữ liệu MySQL, MongoDB, SQL Server. Query optimization, indexing, data modeling, caching với Redis.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "imgLink": "./images/icon/icon5.png",
+        "title": "DevOps & Deployment",
+        "text": "Triển khai hệ thống với Docker, CI/CD (GitHub Actions). Quản lý server Linux/Ubuntu, hosting trên aaPanel, cPanel, AWS EC2.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "imgLink": "./images/icon/icon6.png",
+        "title": "Automation & Integration",
+        "text": "Xây dựng workflow tự động hóa với n8n. Tích hợp SAP B1, đồng bộ dữ liệu giữa các nền tảng, ETL process, data transformation.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "700"
+      }
+    ]
+  },
+  "skillData": {
+    "title": "Các kỹ năng chuyên môn mà tôi sở hữu trong lĩnh vực phát triển phần mềm.",
+    "text": "Với hơn 3 năm kinh nghiệm, tôi đã làm chủ nhiều công nghệ và framework hiện đại. Từ frontend đến backend, từ database đến DevOps, tôi luôn nỗ lực nâng cao kỹ năng để xây dựng các hệ thống chất lượng cao, hiệu suất tốt và dễ bảo trì.",
+    "skills": [
+      {
+        "title": "VueJS / Nuxt",
+        "progress": "90%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "title": "ReactJS / Next.js",
+        "progress": "85%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "title": "Node.js / NestJS",
+        "progress": "90%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "title": "PHP / Laravel",
+        "progress": "75%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "title": "MySQL / MongoDB",
+        "progress": "80%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "title": "Docker / DevOps",
+        "progress": "70%",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "700"
+      }
+    ]
+  },
+  "portfolioData": {
+    "portfolioItems": [
+      {
+        "imgLink": "./images/portfolio/portfolio1.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
+        "title": "Hệ thống Mua sắm Tập trung",
+        "subTitle": "ERP / SAP B1 Integration",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio2.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
+        "title": "Hệ thống POS Bán lẻ",
+        "subTitle": "Retail / Point of Sale",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio3.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
+        "title": "E-commerce MedusaJS",
+        "subTitle": "E-commerce / VNPAY / GHTK",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio4.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
+        "title": "Nhanh.vn → Shopify Sync",
+        "subTitle": "Integration / Automation",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio5.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
+        "title": "n8n Workflow Automation",
+        "subTitle": "Automation / ERP Sync",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio6.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
+        "title": "WordPress E-commerce",
+        "subTitle": "WordPress / WooCommerce",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "700"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio1.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
+        "title": "Hệ thống Mua sắm Tập trung",
+        "subTitle": "ERP / SAP B1 Integration",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio2.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
+        "title": "Hệ thống POS Bán lẻ",
+        "subTitle": "Retail / Point of Sale",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio3.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
+        "title": "E-commerce MedusaJS",
+        "subTitle": "E-commerce / VNPAY / GHTK",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio4.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
+        "title": "Nhanh.vn → Shopify Sync",
+        "subTitle": "Integration / Automation",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio5.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
+        "title": "n8n Workflow Automation",
+        "subTitle": "Automation / ERP Sync",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio6.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
+        "title": "WordPress E-commerce",
+        "subTitle": "WordPress / WooCommerce",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "700"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio1.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
+        "title": "Hệ thống Mua sắm Tập trung",
+        "subTitle": "ERP / SAP B1 Integration",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio2.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
+        "title": "Hệ thống POS Bán lẻ",
+        "subTitle": "Retail / Point of Sale",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio3.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
+        "title": "E-commerce MedusaJS",
+        "subTitle": "E-commerce / VNPAY / GHTK",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio4.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
+        "title": "Nhanh.vn → Shopify Sync",
+        "subTitle": "Integration / Automation",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio5.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
+        "title": "n8n Workflow Automation",
+        "subTitle": "Automation / ERP Sync",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio6.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
+        "title": "WordPress E-commerce",
+        "subTitle": "WordPress / WooCommerce",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "700"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio1.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
+        "title": "Hệ thống Mua sắm Tập trung",
+        "subTitle": "ERP / SAP B1 Integration",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "200"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio2.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
+        "title": "Hệ thống POS Bán lẻ",
+        "subTitle": "Retail / Point of Sale",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio3.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
+        "title": "E-commerce MedusaJS",
+        "subTitle": "E-commerce / VNPAY / GHTK",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio4.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
+        "title": "Nhanh.vn → Shopify Sync",
+        "subTitle": "Integration / Automation",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "imgLink": "./images/portfolio/portfolio5.jpg",
+        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
+        "title": "n8n Workflow Automation",
+        "subTitle": "Automation / ERP Sync",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      }
+    ]
+  },
+  "blogData": {
+    "useFor": "blog",
+    "sliderSetting": {
+      "infinite": true,
+      "speed": 500,
+      "slidesToShow": 3,
+      "slidesToScroll": 1,
+      "arrows": false,
+      "responsive": [
+        {
+          "breakpoint": 991,
+          "settings": {
+            "slidesToShow": 2,
+            "autoplay": true
+          }
+        },
+        {
+          "breakpoint": 767,
+          "settings": {
+            "slidesToShow": 1,
+            "autoplay": true
+          }
+        }
+      ]
+    },
+    "informations": [
+      {
+        "imgLink": "./images/blog/blog1.jpg",
+        "designation": "Technical",
+        "date": "15-03-2026",
+        "title": "Xây dựng hệ thống E-commerce hiệu suất cao với MedusaJS",
+        "href": "/blog/blog-details"
+      },
+      {
+        "imgLink": "./images/blog/blog2.jpg",
+        "designation": "Technical",
+        "date": "10-02-2026",
+        "title": "Tích hợp SAP B1 vào hệ thống mua sắm tập trung - Kinh nghiệm thực tế",
+        "href": "/blog/blog-details"
+      },
+      {
+        "imgLink": "./images/blog/blog3.jpg",
+        "designation": "Technical",
+        "date": "05-01-2026",
+        "title": "Tự động hóa quy trình với n8n - Từ ERP đến Shopify",
+        "href": "/blog/blog-details"
+      },
+      {
+        "imgLink": "./images/blog/blog1.jpg",
+        "designation": "Technical",
+        "date": "20-12-2025",
+        "title": "Tối ưu hiệu suất Frontend với VueJS và Nuxt 3",
+        "href": "/blog/blog-details"
+      },
+      {
+        "imgLink": "./images/blog/blog2.jpg",
+        "designation": "Technical",
+        "date": "15-11-2025",
+        "title": "Xây dựng RESTful API chuẩn với NestJS và TypeScript",
+        "href": "/blog/blog-details"
+      },
+      {
+        "imgLink": "./images/blog/blog3.jpg",
+        "designation": "Technical",
+        "date": "01-10-2025",
+        "title": "DevOps cho Fullstack Developer: Docker, CI/CD và triển khai tự động",
+        "href": "/blog/blog-details"
+      }
+    ]
+  },
+  "reviewData": {
+    "useFor": "review",
+    "sliderSetting": {
+      "infinite": true,
+      "speed": 500,
+      "slidesToShow": 3,
+      "slidesToScroll": 1,
+      "arrows": false,
+      "responsive": [
+        {
+          "breakpoint": 991,
+          "settings": {
+            "slidesToShow": 2,
+            "autoplay": true
+          }
+        },
+        {
+          "breakpoint": 767,
+          "settings": {
+            "slidesToShow": 1,
+            "autoplay": true
+          }
+        }
+      ]
+    },
+    "informations": [
+      {
+        "imgLink": "./images/client/client1.png",
+        "title": "Nguyễn Văn An",
+        "designation": "CEO - FOXAI",
+        "text": "Tấn là một Technical Lead xuất sắc, luôn đảm bảo chất lượng code và tiến độ dự án. Khả năng giải quyết vấn đề nhanh chóng và hiệu quả."
+      },
+      {
+        "imgLink": "./images/client/client2.png",
+        "title": "Trần Minh Đức",
+        "designation": "Project Manager",
+        "text": "Làm việc với Tấn rất chuyên nghiệp. Anh ấy có khả năng phân tích yêu cầu sâu sắc và đưa ra giải pháp kỹ thuật tối ưu cho mọi dự án."
+      },
+      {
+        "imgLink": "./images/client/client3.png",
+        "title": "Lê Thị Hương",
+        "designation": "Business Owner",
+        "text": "Tấn đã giúp chúng tôi xây dựng hệ thống e-commerce hoàn chỉnh, tích hợp thanh toán và vận chuyển. Website hoạt động ổn định và hiệu suất rất tốt."
+      },
+      {
+        "imgLink": "./images/client/client1.png",
+        "title": "Phạm Quốc Huy",
+        "designation": "CTO - Tech Startup",
+        "text": "Khả năng tích hợp hệ thống của Tấn rất ấn tượng. Anh đã kết nối thành công SAP B1 với hệ thống nội bộ, giúp tự động hóa quy trình mua sắm."
+      },
+      {
+        "imgLink": "./images/client/client2.png",
+        "title": "Vũ Hoàng Long",
+        "designation": "Senior Developer",
+        "text": "Tấn là một leader tốt, luôn hỗ trợ team member phát triển. Code review kỹ lưỡng và xây dựng coding standard rất chuẩn chỉnh."
+      },
+      {
+        "imgLink": "./images/client/client3.png",
+        "title": "Đặng Thu Trang",
+        "designation": "Product Owner",
+        "text": "Hệ thống POS mà Tấn phát triển đạt uptime 99.8%, giúp chuỗi cửa hàng vận hành trơn tru. Rất hài lòng với kết quả."
+      }
+    ]
+  },
+  "resumeData": {
+    "experienceTitle": "Kinh nghiệm",
+    "experience": [
+      {
+        "title": "Trưởng phòng Kỹ thuật (Technical Lead)",
+        "duration": "08/2023 - Hiện tại",
+        "subTitle": "FOXAI",
+        "text": "Dẫn dắt đội ngũ 5-8 developer, xây dựng hệ thống mua sắm tập trung tích hợp SAP B1, hệ thống POS bán lẻ (99.8% uptime), và website e-commerce trên MedusaJS. Giảm 60% thời gian xử lý đơn hàng, tối ưu build time từ 3 phút xuống 45 giây."
+      }
+    ],
+    "educationTitle": "Học vấn",
+    "education": [
+      {
+        "title": "Kỹ thuật Máy tính",
+        "duration": "2018 - 2023",
+        "subTitle": "Đại học Kỹ thuật Công nghiệp Thái Nguyên",
+        "text": "Xếp loại: Khá. Chuyên ngành Kỹ thuật máy tính với nền tảng vững chắc về khoa học máy tính, lập trình và hệ thống mạng."
+      }
+    ]
+  },
+  "contactData": {
+    "formTitle": "Liên hệ với tôi",
+    "title": "Thông tin Liên hệ",
+    "subTitle": "Kết nối qua mạng xã hội",
+    "text": "Nếu bạn có dự án cần triển khai hoặc muốn hợp tác, đừng ngần ngại liên hệ với tôi. Tôi luôn sẵn sàng trao đổi và tư vấn giải pháp kỹ thuật phù hợp."
+  },
+  "socialData": [
+    {
+      "icon": "linkedin",
+      "title": "LinkedIn",
+      "link": "https://linkedin.com/in/dotrongtan113"
+    },
+    {
+      "icon": "github",
+      "title": "GitHub",
+      "link": "https://github.com/dotrongtan113"
+    }
+  ],
+  "socialData2": [
+    {
+      "icon": "linkedin",
+      "link": "https://linkedin.com/in/dotrongtan113"
+    },
+    {
+      "icon": "github",
+      "link": "https://github.com/dotrongtan113"
+    },
+    {
+      "icon": "envelope",
+      "link": "mailto:dotrongtan113@gmail.com"
+    }
+  ]
+}
