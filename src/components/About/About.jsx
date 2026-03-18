@@ -7,7 +7,7 @@ const About = ({ data }) => {
   return (
     <section id="about" className="st-about-wrap">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title={"Về tôi"} />
+      <SectionHeading title={"Thông tin cơ bản"} />
       <div className="container">
         <div className="row">
           <div className="col-lg-6 ">

@@ -7,7 +7,16 @@ const Iconbox = ({ data }) => {
   return (
     <section>
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title={"Dịch vụ"} />
+      <SectionHeading title={"Loại hình dự án"} />
+     <div
+        className="text-center mb-3"
+        style={{
+          width: window.innerWidth < 768 ? "90%" : "30%",
+          margin: "0 auto"
+        }}
+      >
+        Bằng các kinh nghiệm kể trên, tôi tự tin triển khai đa dạng các loại dự án trong ngành CNTT, đảm bảo tiến độ thực hiện và chất lượng sản phẩm theo yêu cầu
+      </div>
       <div className="container">
         <div className="row">
           {

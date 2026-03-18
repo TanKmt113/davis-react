@@ -16,9 +16,9 @@ const Home = () => {
       <div className="st-height-b80 st-height-lg-b80"></div>
       <Hero data={heroData.homeOneHero} socialData={socialData} />
       <About data={aboutData} data-aos="fade-right" />
-      <Iconbox data={serviceData} data-aos="fade-right" />
-      <Skill data={skillData} data-aos="fade-right" />
       <Resume data={resumeData} />
+      <Skill data={skillData} data-aos="fade-right" />
+      <Iconbox data={serviceData} data-aos="fade-right" />
       <PortfolioSection data={portfolioData} data-aos="fade-right" />
       {/* <ReviewSection data={reviewData} data-aos="fade-right" /> */}
       {/* <BlogSection data={blogData} data-aos="fade-right" /> */}
