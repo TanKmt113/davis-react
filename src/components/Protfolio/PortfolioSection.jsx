@@ -3,73 +3,64 @@ import './Portfolio.scss';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { useState } from 'react';
 import SinglePortfolio from './SinglePortfolio';
-import Modal from '../Modal/Modal';
+import { Icon } from '@iconify/react';
 
 const PortfolioSection = ({ data }) => {
-  // Modal
-  const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
-
-  const getData = (imgLink, title, subTitle) => {
-    let tempData = [imgLink, title, subTitle];
-    setTempData(item => [1, ...tempData]);
-    setModal(true);
-  }
-
-  const modalClose = () => {
-    setModal(false);
-  }
-
-
-  // Load Items
   const { portfolioItems } = data;
-  const itemsPerPage = 6;
-  const [visibleItems, setVisibleItems] = useState(
-    portfolioItems.slice(0, itemsPerPage),
-  );
 
-  const [showLoadMore, setShowLoadMore] = useState(true);
+  // Detail popup state
+  const [selectedItem, setSelectedItem] = useState(null);
 
-  const loadMoreItems = () => {
-    const currentLength = visibleItems.length;
-    const nextChunk = portfolioItems.slice(
-      currentLength,
-      currentLength + itemsPerPage,
-    );
-    setVisibleItems(prevItems => [...prevItems, ...nextChunk]);
+  const openDetail = (item) => {
+    setSelectedItem(item);
+  };
 
-    if (currentLength + itemsPerPage >= portfolioItems.length) {
-      setShowLoadMore(false);
-    }
+  const closeDetail = () => {
+    setSelectedItem(null);
   };
 
   return (
     <>
-      <section id="portfolio">
+      <section id="portfolio" className="st-dark-bg">
         <div className="st-height-b100 st-height-lg-b80"></div>
         <SectionHeading title={'Dự án'} />
         <div className="container">
           <div className="row">
-            {visibleItems.map((element, index) => (
-              <SinglePortfolio data={element} key={index} getData={getData} />
+            {portfolioItems.map((element, index) => (
+              <SinglePortfolio data={element} key={index} onClickDetail={openDetail} />
             ))}
-            <div className="col-lg-12 text-center">
-              <div className="st-portfolio-btn">
-                {showLoadMore && (
-                  <button
-                    className="st-btn st-style1 st-color1"
-                    onClick={loadMoreItems}
-                  >
-                    Xem thêm
-                  </button>
-                )}
-              </div>
-            </div>
           </div>
         </div>
         <div className="st-height-b100 st-height-lg-b80"></div>
       </section>
-      {modal === true ? <Modal img={tempData[1]} title={tempData[2]} subTitle={tempData[3]} modalClose={modalClose} /> : ""}
+
+      {/* Detail Popup */}
+      {selectedItem && (
+        <div className="st-portfolio-popup-overlay" onClick={closeDetail}>
+          <div className="st-portfolio-popup" onClick={(e) => e.stopPropagation()}>
+            <button className="st-portfolio-popup-close" onClick={closeDetail}>
+              <Icon icon="mdi:close" />
+            </button>
+            <h3 className="st-portfolio-popup-title">{selectedItem.title}</h3>
+            <span className="st-portfolio-popup-tag">{selectedItem.subTitle}</span>
+            <div className="st-portfolio-popup-desc">
+              {selectedItem.description.split('\n').map((line, i) => (
+                <p key={i}>{line}</p>
+              ))}
+            </div>
+            {selectedItem.productLink && selectedItem.productLink !== '#' && (
+              <a
+                href={selectedItem.productLink}
+                className="st-btn st-style1 st-color1"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Xem sản phẩm <Icon icon="mdi:arrow-right" />
+              </a>
+            )}
+          </div>
+        </div>
+      )}
     </>
   );
 };
@@ -79,5 +70,3 @@ PortfolioSection.propTypes = {
 };
 
 export default PortfolioSection;
-
-

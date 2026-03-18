@@ -1,101 +1,187 @@
 @import "../../sass/default/variable";
-.st-portfolio {
-  display: block;
-  position: relative;
+
+// ========== Grid Card Layout ==========
+.st-portfolio-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 32px 28px;
   margin-bottom: 30px;
-  &:hover {
-    cursor: pointer;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: $dark-color5;
-    opacity: 0;
-    transition: all 0.4s ease;
-    z-index: 1;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    border: 1px solid $base-color3;
-    width: 90%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    opacity: 0;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
+  cursor: pointer;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
-    &::before {
-      opacity: 0.85;
-    }
-    &::after {
-      opacity: 0.85;
-    }
-    .st-portfolio-item-hover {
-      opacity: 1;
-      visibility: visible;
-    }
-  }
+    transform: translateY(-5px);
+    border-color: $base-color1;
+    box-shadow: 0 16px 40px rgba(0, 210, 138, 0.1);
+    background: rgba(255, 255, 255, 0.06);
 
-  .st-portfolio-img img {
-    width: 100%;
+    .st-portfolio-card-link {
+      color: $base-color1;
+    }
+
+    .st-portfolio-card-icon svg {
+      color: $base-color1;
+    }
   }
 }
 
-.st-portfolio-item-hover {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.4s ease;
-  z-index: 5;
-  text-align: center;
-  opacity: 0;
-  visibility: hidden;
+.st-portfolio-card-icon {
+  margin-bottom: 20px;
 
   svg {
-    border: 0.5px solid $dark-color5;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $base-color1;
-    color: $dark-color1;
-    opacity: 0.8;
-  }
-
-  h5 {
-    position: absolute;
-    width: 250px;
-    top: 87px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-    font-size: 20px;
-    color: #fdfeff;
-  }
-
-  p {
-    position: absolute;
-    width: 250px;
-    top: 114px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
+    width: 40px;
+    height: 40px;
+    color: #666;
+    transition: color 0.3s ease;
   }
 }
 
+.st-portfolio-card-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.st-portfolio-card-subtitle {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.st-portfolio-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #aaa;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+// ========== Popup Overlay ==========
+.st-portfolio-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeInOverlay 0.25s ease;
+}
+
+.st-portfolio-popup {
+  position: relative;
+  background: #1a1a2e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp 0.3s ease;
+}
+
+.st-portfolio-popup-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.st-portfolio-popup-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+  padding-right: 40px;
+}
+
+.st-portfolio-popup-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba($base-color1, 0.12);
+  color: $base-color1;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.st-portfolio-popup-desc {
+  color: #bbb;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 28px;
+
+  p {
+    margin-bottom: 8px;
+
+    &:empty {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+// ========== Animations ==========
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+// ========== Responsive ==========
+@media screen and (max-width: 767px) {
+  .st-portfolio-popup {
+    padding: 28px 22px;
+  }
+
+  .st-portfolio-popup-title {
+    font-size: 20px;
+  }
+}
+
+// ========== Legacy ==========
 .st-portfolio-btn {
   margin-top: 20px;
 }

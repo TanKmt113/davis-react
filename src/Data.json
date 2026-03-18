@@ -154,211 +154,58 @@
   "portfolioData": {
     "portfolioItems": [
       {
-        "imgLink": "./images/portfolio/mstt.png",
-        "imgLinkLg": "./images/portfolio/mstt.png",
-        "title": "Hệ thống Mua sắm Tập trung",
+        "title": "Hệ thống Mua sắm Tập trung (MSTT)",
         "subTitle": "Tích hợp ERP / SAP B1",
+        "description": "Kiến trúc và triển khai hệ thống mua sắm tập trung, tự động hóa fullflow từ lập kế hoạch → phê duyệt → đặt hàng, tích hợp real-time SAP B1 Service Layer API.\n\nKết quả: Giảm 60% thời gian xử lý đơn hàng (từ 8h xuống 3.2h), xử lý 10K+ orders/tháng không lỗi.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "200"
       },
       {
-        "imgLink": "./images/portfolio/POS.jpg",
-        "imgLinkLg": "./images/portfolio/POS.jpg",
         "title": "Hệ thống POS Bán lẻ",
         "subTitle": "Bán lẻ / POS",
+        "description": "Phát triển hệ thống POS bán lẻ multi-store, tích hợp hardware (thermal printer, barcode scanner, touchscreen), custom driver SDK.\n\nKết quả: Đạt 99.8% uptime cho 25+ điểm bán, xử lý 5K transactions/ngày.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "300"
       },
       {
-        "imgLink": "./images/portfolio/Social_Media_Graphics_vosikk.avif",
-        "imgLinkLg": "./images/portfolio/Social_Media_Graphics_vosikk.avif",
         "title": "E-commerce MedusaJS",
         "subTitle": "E-commerce / VNPAY / GHTK",
+        "description": "Thiết kế E-commerce headless trên MedusaJS + Next.js, tích hợp VNPAY (QR/ATM), GHTK API (real-time tracking).\n\nKết quả: Tối ưu LCP xuống 1.5s (Google PageSpeed 95+), tăng conversion rate 25%.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "400"
       },
       {
-        "imgLink": "./images/portfolio/portfolio4.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
-        "title": "Nhanh.vn → Shopify Sync",
+        "title": "Đồng bộ Nhanh.vn → Shopify",
         "subTitle": "Tích hợp / Tự động hóa",
+        "description": "Giải pháp tự động hóa đồng bộ dữ liệu sản phẩm, tồn kho và đơn hàng giữa nền tảng Nhanh.vn và Shopify. Xử lý webhook real-time, conflict resolution, retry mechanism.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "500"
       },
       {
-        "imgLink": "./images/portfolio/portfolio5.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
         "title": "n8n Workflow Automation",
         "subTitle": "Tự động hóa / Đồng bộ ERP",
+        "description": "Xây dựng các luồng tự động hóa phức tạp kết nối nhiều hệ thống ERP qua n8n. Thiết kế workflow đồng bộ dữ liệu, gửi thông báo, xử lý đơn hàng tự động.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "600"
       },
       {
-        "imgLink": "./images/portfolio/portfolio6.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
         "title": "WordPress E-commerce",
         "subTitle": "WordPress / WooCommerce",
+        "description": "Xây dựng trang thương mại điện tử chuyên nghiệp trên nền tảng WordPress và WooCommerce. Tối ưu SEO, tích hợp cổng thanh toán và vận chuyển nội địa.",
+        "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "700"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio1.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
-        "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "Tích hợp ERP / SAP B1",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "200"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio2.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
-        "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Bán lẻ / POS",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "300"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio3.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
-        "title": "E-commerce MedusaJS",
-        "subTitle": "E-commerce / VNPAY / GHTK",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "400"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio4.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
-        "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Tích hợp / Tự động hóa",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "500"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio5.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
-        "title": "n8n Workflow Automation",
-        "subTitle": "Tự động hóa / Đồng bộ ERP",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "600"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio6.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
-        "title": "WordPress E-commerce",
-        "subTitle": "WordPress / WooCommerce",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "700"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio1.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
-        "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "Tích hợp ERP / SAP B1",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "200"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio2.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
-        "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Bán lẻ / POS",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "300"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio3.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
-        "title": "E-commerce MedusaJS",
-        "subTitle": "E-commerce / VNPAY / GHTK",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "400"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio4.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
-        "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Tích hợp / Tự động hóa",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "500"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio5.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
-        "title": "n8n Workflow Automation",
-        "subTitle": "Tự động hóa / Đồng bộ ERP",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "600"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio6.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio6_lg.jpg",
-        "title": "WordPress E-commerce",
-        "subTitle": "WordPress / WooCommerce",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "700"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio1.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
-        "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "Tích hợp ERP / SAP B1",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "200"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio2.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
-        "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Bán lẻ / POS",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "300"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio3.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio3_lg.jpg",
-        "title": "E-commerce MedusaJS",
-        "subTitle": "E-commerce / VNPAY / GHTK",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "400"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio4.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
-        "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Tích hợp / Tự động hóa",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "500"
-      },
-      {
-        "imgLink": "./images/portfolio/portfolio5.jpg",
-        "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
-        "title": "n8n Workflow Automation",
-        "subTitle": "Tự động hóa / Đồng bộ ERP",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "600"
       }
     ]
   },
