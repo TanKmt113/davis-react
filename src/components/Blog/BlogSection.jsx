@@ -7,7 +7,7 @@ const Blog = ({ data }) => {
   return (
     <section id="blog">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title={"Blogs"} />
+      <SectionHeading title={"Bài viết"} />
       <div className="container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
         <Carousel data={data} />
       </div>

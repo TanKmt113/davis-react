@@ -7,7 +7,7 @@ const About = ({ data }) => {
   return (
     <section id="about" className="st-about-wrap">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title={"About Me"} />
+      <SectionHeading title={"Về tôi"} />
       <div className="container">
         <div className="row">
           <div className="col-lg-6 ">
@@ -33,7 +33,7 @@ const About = ({ data }) => {
                     ))}
                   </ul>
                   <div className="st-text-block-btn">
-                    <a className='st-btn st-style1 st-color1' href={cvPdf} download>Download CV</a>
+                    <a className='st-btn st-style1 st-color1' href={cvPdf} download>Tải CV</a>
                   </div>
                 </div>
               </div>

@@ -10,26 +10,26 @@ const Contact = ({ data, socialData }) => {
   return (
     <section id="contact" className="st-dark-bg">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title="Contact" />
+      <SectionHeading title="Liên hệ" />
       <div className="container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
         <div className="row d-flex">
           <div className="col-lg-6">
-            <h3 className="st-contact-title">Just say Hello</h3>
+            <h3 className="st-contact-title">Gửi lời chào</h3>
             <div id="st-alert"></div>
             <form action="#" method="POST" className="st-contact-form" id="contact-form">
               <div className="st-form-field">
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
+                <input type="text" id="name" name="name" placeholder="Tên của bạn" required />
               </div>
               <div className="st-form-field">
-                <input type="text" id="email" name="email" placeholder="Your Email" required />
+                <input type="text" id="email" name="email" placeholder="Email của bạn" required />
               </div>
               <div className="st-form-field">
-                <input type="text" id="subject" name="subject" placeholder="Your Subject" required />
+                <input type="text" id="subject" name="subject" placeholder="Chủ đề" required />
               </div>
               <div className="st-form-field">
-                <textarea cols="30" rows="10" id="msg" name="msg" placeholder="Your Message" required></textarea>
+                <textarea cols="30" rows="10" id="msg" name="msg" placeholder="Lời nhắn" required></textarea>
               </div>
-              <button className='st-btn st-style1 st-color1' type="submit" id="submit" name="submit">Send Message</button>
+              <button className='st-btn st-style1 st-color1' type="submit" id="submit" name="submit">Gửi tin nhắn</button>
             </form>
             <div className="st-height-b0 st-height-lg-b30"></div>
           </div>
@@ -52,7 +52,7 @@ const Contact = ({ data, socialData }) => {
                   <Icon icon="fa-solid:phone-alt" />
                 </div>
                 <div className="st-single-info-details">
-                  <h4>Phone</h4>
+                  <h4>Điện thoại</h4>
                   <span>0969846563</span>
                 </div>
               </div>
@@ -61,7 +61,7 @@ const Contact = ({ data, socialData }) => {
                   <Icon icon="mdi:location" />
                 </div>
                 <div className="st-single-info-details">
-                  <h4>Address</h4>
+                  <h4>Địa chỉ</h4>
                   <span>Hà Nội, Việt Nam</span>
                 </div>
               </div>

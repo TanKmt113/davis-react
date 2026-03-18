@@ -34,7 +34,7 @@
     "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. Chuyên gia trong lĩnh vực E-commerce và ERP, có kinh nghiệm thực chiến tích hợp các nền tảng đa quốc gia và nội địa như SAP B1, Shopify, Haravan, Nhanh.vn. Thành thạo xây dựng kiến trúc hệ thống hiệu suất cao sử dụng các công nghệ hiện đại.",
     "details": [
       {
-        "title": "Phone",
+        "title": "Điện thoại",
         "info": "0969846563"
       },
       {
@@ -42,11 +42,11 @@
         "info": "dotrongtan113@gmail.com"
       },
       {
-        "title": "From",
+        "title": "Địa chỉ",
         "info": "Hà Nội, Việt Nam"
       },
       {
-        "title": "Education",
+        "title": "Học vấn",
         "info": "ĐH Kỹ thuật Công nghiệp Thái Nguyên"
       }
     ]
@@ -55,7 +55,7 @@
     "services": [
       {
         "imgLink": "./images/icon/icon1.png",
-        "title": "Frontend Development",
+        "title": "Phát triển Frontend",
         "text": "Phát triển giao diện người dùng với VueJS, ReactJS, Nuxt 3, Next.js. Chuyển đổi thiết kế Figma/Zeplin thành code, tối ưu SEO và Web Accessibility.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -63,7 +63,7 @@
       },
       {
         "imgLink": "./images/icon/icon2.png",
-        "title": "Backend Development",
+        "title": "Phát triển Backend",
         "text": "Xây dựng hệ thống backend với Node.js (Express, NestJS), PHP (Laravel). Thiết kế RESTful API, microservices, xác thực JWT/OAuth2.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -71,7 +71,7 @@
       },
       {
         "imgLink": "./images/icon/icon3.png",
-        "title": "E-commerce Solutions",
+        "title": "Giải pháp E-commerce",
         "text": "Triển khai giải pháp thương mại điện tử trên Shopify, Haravan, MedusaJS, WordPress/WooCommerce. Tích hợp thanh toán VNPAY, vận chuyển GHTK.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -79,7 +79,7 @@
       },
       {
         "imgLink": "./images/icon/icon4.png",
-        "title": "Database & Optimization",
+        "title": "Cơ sở dữ liệu & Tối ưu hóa",
         "text": "Quản lý và tối ưu hóa cơ sở dữ liệu MySQL, MongoDB, SQL Server. Query optimization, indexing, data modeling, caching với Redis.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -87,7 +87,7 @@
       },
       {
         "imgLink": "./images/icon/icon5.png",
-        "title": "DevOps & Deployment",
+        "title": "DevOps & Triển khai",
         "text": "Triển khai hệ thống với Docker, CI/CD (GitHub Actions). Quản lý server Linux/Ubuntu, hosting trên aaPanel, cPanel, AWS EC2.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -95,7 +95,7 @@
       },
       {
         "imgLink": "./images/icon/icon6.png",
-        "title": "Automation & Integration",
+        "title": "Tự động hóa & Tích hợp",
         "text": "Xây dựng workflow tự động hóa với n8n. Tích hợp SAP B1, đồng bộ dữ liệu giữa các nền tảng, ETL process, data transformation.",
         "effect": "zoom-out-up",
         "duration": "500",
@@ -157,7 +157,7 @@
         "imgLink": "./images/portfolio/mstt.png",
         "imgLinkLg": "./images/portfolio/mstt.png",
         "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "ERP / SAP B1 Integration",
+        "subTitle": "Tích hợp ERP / SAP B1",
         "effect": "fade-up",
         "duration": "500",
         "delay": "200"
@@ -166,7 +166,7 @@
         "imgLink": "./images/portfolio/POS.jpg",
         "imgLinkLg": "./images/portfolio/POS.jpg",
         "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Retail / Point of Sale",
+        "subTitle": "Bán lẻ / POS",
         "effect": "fade-up",
         "duration": "500",
         "delay": "300"
@@ -184,7 +184,7 @@
         "imgLink": "./images/portfolio/portfolio4.jpg",
         "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
         "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Integration / Automation",
+        "subTitle": "Tích hợp / Tự động hóa",
         "effect": "fade-up",
         "duration": "500",
         "delay": "500"
@@ -193,7 +193,7 @@
         "imgLink": "./images/portfolio/portfolio5.jpg",
         "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
         "title": "n8n Workflow Automation",
-        "subTitle": "Automation / ERP Sync",
+        "subTitle": "Tự động hóa / Đồng bộ ERP",
         "effect": "fade-up",
         "duration": "500",
         "delay": "600"
@@ -211,7 +211,7 @@
         "imgLink": "./images/portfolio/portfolio1.jpg",
         "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
         "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "ERP / SAP B1 Integration",
+        "subTitle": "Tích hợp ERP / SAP B1",
         "effect": "fade-up",
         "duration": "500",
         "delay": "200"
@@ -220,7 +220,7 @@
         "imgLink": "./images/portfolio/portfolio2.jpg",
         "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
         "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Retail / Point of Sale",
+        "subTitle": "Bán lẻ / POS",
         "effect": "fade-up",
         "duration": "500",
         "delay": "300"
@@ -238,7 +238,7 @@
         "imgLink": "./images/portfolio/portfolio4.jpg",
         "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
         "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Integration / Automation",
+        "subTitle": "Tích hợp / Tự động hóa",
         "effect": "fade-up",
         "duration": "500",
         "delay": "500"
@@ -247,7 +247,7 @@
         "imgLink": "./images/portfolio/portfolio5.jpg",
         "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
         "title": "n8n Workflow Automation",
-        "subTitle": "Automation / ERP Sync",
+        "subTitle": "Tự động hóa / Đồng bộ ERP",
         "effect": "fade-up",
         "duration": "500",
         "delay": "600"
@@ -265,7 +265,7 @@
         "imgLink": "./images/portfolio/portfolio1.jpg",
         "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
         "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "ERP / SAP B1 Integration",
+        "subTitle": "Tích hợp ERP / SAP B1",
         "effect": "fade-up",
         "duration": "500",
         "delay": "200"
@@ -274,7 +274,7 @@
         "imgLink": "./images/portfolio/portfolio2.jpg",
         "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
         "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Retail / Point of Sale",
+        "subTitle": "Bán lẻ / POS",
         "effect": "fade-up",
         "duration": "500",
         "delay": "300"
@@ -292,7 +292,7 @@
         "imgLink": "./images/portfolio/portfolio4.jpg",
         "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
         "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Integration / Automation",
+        "subTitle": "Tích hợp / Tự động hóa",
         "effect": "fade-up",
         "duration": "500",
         "delay": "500"
@@ -301,7 +301,7 @@
         "imgLink": "./images/portfolio/portfolio5.jpg",
         "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
         "title": "n8n Workflow Automation",
-        "subTitle": "Automation / ERP Sync",
+        "subTitle": "Tự động hóa / Đồng bộ ERP",
         "effect": "fade-up",
         "duration": "500",
         "delay": "600"
@@ -319,7 +319,7 @@
         "imgLink": "./images/portfolio/portfolio1.jpg",
         "imgLinkLg": "./images/portfolio/portfolio1_lg.jpg",
         "title": "Hệ thống Mua sắm Tập trung",
-        "subTitle": "ERP / SAP B1 Integration",
+        "subTitle": "Tích hợp ERP / SAP B1",
         "effect": "fade-up",
         "duration": "500",
         "delay": "200"
@@ -328,7 +328,7 @@
         "imgLink": "./images/portfolio/portfolio2.jpg",
         "imgLinkLg": "./images/portfolio/portfolio2_lg.jpg",
         "title": "Hệ thống POS Bán lẻ",
-        "subTitle": "Retail / Point of Sale",
+        "subTitle": "Bán lẻ / POS",
         "effect": "fade-up",
         "duration": "500",
         "delay": "300"
@@ -346,7 +346,7 @@
         "imgLink": "./images/portfolio/portfolio4.jpg",
         "imgLinkLg": "./images/portfolio/portfolio4_lg.jpg",
         "title": "Nhanh.vn → Shopify Sync",
-        "subTitle": "Integration / Automation",
+        "subTitle": "Tích hợp / Tự động hóa",
         "effect": "fade-up",
         "duration": "500",
         "delay": "500"
@@ -355,7 +355,7 @@
         "imgLink": "./images/portfolio/portfolio5.jpg",
         "imgLinkLg": "./images/portfolio/portfolio5_lg.jpg",
         "title": "n8n Workflow Automation",
-        "subTitle": "Automation / ERP Sync",
+        "subTitle": "Tự động hóa / Đồng bộ ERP",
         "effect": "fade-up",
         "duration": "500",
         "delay": "600"
@@ -390,42 +390,42 @@
     "informations": [
       {
         "imgLink": "./images/blog/blog1.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "15-03-2026",
         "title": "Xây dựng hệ thống E-commerce hiệu suất cao với MedusaJS",
         "href": "/blog/blog-details"
       },
       {
         "imgLink": "./images/blog/blog2.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "10-02-2026",
         "title": "Tích hợp SAP B1 vào hệ thống mua sắm tập trung - Kinh nghiệm thực tế",
         "href": "/blog/blog-details"
       },
       {
         "imgLink": "./images/blog/blog3.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "05-01-2026",
         "title": "Tự động hóa quy trình với n8n - Từ ERP đến Shopify",
         "href": "/blog/blog-details"
       },
       {
         "imgLink": "./images/blog/blog1.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "20-12-2025",
         "title": "Tối ưu hiệu suất Frontend với VueJS và Nuxt 3",
         "href": "/blog/blog-details"
       },
       {
         "imgLink": "./images/blog/blog2.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "15-11-2025",
         "title": "Xây dựng RESTful API chuẩn với NestJS và TypeScript",
         "href": "/blog/blog-details"
       },
       {
         "imgLink": "./images/blog/blog3.jpg",
-        "designation": "Technical",
+        "designation": "Kỹ thuật",
         "date": "01-10-2025",
         "title": "DevOps cho Fullstack Developer: Docker, CI/CD và triển khai tự động",
         "href": "/blog/blog-details"
@@ -467,13 +467,13 @@
       {
         "imgLink": "./images/client/client2.png",
         "title": "Trần Minh Đức",
-        "designation": "Project Manager",
+        "designation": "Quản lý dự án",
         "text": "Làm việc với Tấn rất chuyên nghiệp. Anh ấy có khả năng phân tích yêu cầu sâu sắc và đưa ra giải pháp kỹ thuật tối ưu cho mọi dự án."
       },
       {
         "imgLink": "./images/client/client3.png",
         "title": "Lê Thị Hương",
-        "designation": "Business Owner",
+        "designation": "Chủ doanh nghiệp",
         "text": "Tấn đã giúp chúng tôi xây dựng hệ thống e-commerce hoàn chỉnh, tích hợp thanh toán và vận chuyển. Website hoạt động ổn định và hiệu suất rất tốt."
       },
       {
@@ -485,7 +485,7 @@
       {
         "imgLink": "./images/client/client2.png",
         "title": "Vũ Hoàng Long",
-        "designation": "Senior Developer",
+        "designation": "Lập trình viên Senior",
         "text": "Tấn là một leader tốt, luôn hỗ trợ team member phát triển. Code review kỹ lưỡng và xây dựng coding standard rất chuẩn chỉnh."
       },
       {
@@ -506,13 +506,15 @@
         "text": "Dẫn dắt đội ngũ 5-8 developer, xây dựng hệ thống mua sắm tập trung tích hợp SAP B1, hệ thống POS bán lẻ (99.8% uptime), và website e-commerce trên MedusaJS. Giảm 60% thời gian xử lý đơn hàng, tối ưu build time từ 3 phút xuống 45 giây."
       }
     ],
-    "educationTitle": "Học vấn",
+    "educationTitle": "Năng lực cốt lõi",
     "education": [
       {
-        "title": "Kỹ thuật Máy tính",
-        "duration": "2018 - 2023",
-        "subTitle": "Đại học Kỹ thuật Công nghiệp Thái Nguyên",
-        "text": "Xếp loại: Khá. Chuyên ngành Kỹ thuật máy tính với nền tảng vững chắc về khoa học máy tính, lập trình và hệ thống mạng."
+        "title": "Technical Development (70%)",
+        "text": "<ul class=\"st-resume-list\"><li><strong>Kiến trúc và triển khai hệ thống mua sắm tập trung</strong>, tự động hóa fullflow từ lập kế hoạch → phê duyệt → đặt hàng, tích hợp real-time SAP B1 Service Layer API.<br/><em><span class=\"st-highlight\">Kết quả:</span> Giảm 60% thời gian xử lý đơn hàng (từ 8h xuống 3.2h), xử lý 10K+ orders/tháng không lỗi.</em></li><li><strong>Phát triển hệ thống POS bán lẻ multi-store</strong>, tích hợp hardware (thermal printer, barcode scanner, touchscreen), custom driver SDK.<br/><em><span class=\"st-highlight\">Kết quả:</span> Đạt 99.8% uptime cho 25+ điểm bán, xử lý 5K transactions/ngày.</em></li><li><strong>Thiết kế E-commerce headless trên MedusaJS + Next.js</strong>, tích hợp VNPAY (QR/ATM), GHTK API (real-time tracking).<br/><em><span class=\"st-highlight\">Kết quả:</span> Tối ưu LCP xuống 1.5s (Google PageSpeed 95+), tăng conversion rate 25%.</em></li></ul>"
+      },
+      {
+        "title": "Team Leadership & Planning (30%)",
+        "text": "<ul class=\"st-resume-list\"><li><strong>Lập kế hoạch timeline dự án Agile</strong> (2-week sprints), phân công task theo kỹ năng (Jira/ClickUp), đảm bảo 100% deadline.</li><li><strong>Mentor 3 junior developers</strong> lên mid-level trong 6 tháng, tổ chức weekly code review và chia sẻ kỹ thuật.</li><li><strong>Xây dựng Frontend Boilerplate</strong> (Vue 3 + Pinia + Vite) và <strong>Backend Base</strong> (NestJS + Prisma), giảm setup time 80%.<br/><em><span class=\"st-highlight\">Kết quả:</span> Giảm thời gian phát triển feature mới 40% (từ 5 ngày xuống 3 ngày), build time từ 3 phút xuống 45s.</em></li></ul>"
       }
     ]
   },

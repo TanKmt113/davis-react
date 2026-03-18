@@ -8,7 +8,7 @@ const Review = ({ data }) => {
   return (
     <section className="st-dark-bg">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title="Review" />
+      <SectionHeading title="Đánh giá" />
       <div className="container" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
         <Carousel data={data} />
       </div>

@@ -47,7 +47,7 @@ const PortfolioSection = ({ data }) => {
     <>
       <section id="portfolio">
         <div className="st-height-b100 st-height-lg-b80"></div>
-        <SectionHeading title={'Portfolio'} />
+        <SectionHeading title={'Dự án'} />
         <div className="container">
           <div className="row">
             {visibleItems.map((element, index) => (
@@ -60,7 +60,7 @@ const PortfolioSection = ({ data }) => {
                     className="st-btn st-style1 st-color1"
                     onClick={loadMoreItems}
                   >
-                    Load more
+                    Xem thêm
                   </button>
                 )}
               </div>

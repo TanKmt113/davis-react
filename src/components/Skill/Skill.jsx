@@ -7,7 +7,7 @@ const Skill = ({ data }) => {
   return (
     <section className="st-dark-bg">
       <div className="st-height-b100 st-height-lg-b80"></div>
-      <SectionHeading title="Skills" />
+      <SectionHeading title="Kỹ năng" />
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
