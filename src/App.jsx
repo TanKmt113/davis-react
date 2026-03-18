@@ -4,6 +4,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Page404 from './components/404/Page404';
 import BlogDetails from './components/Blog/BlogDetails';
+import { ThemeProvider } from './context/ThemeContext';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
@@ -13,15 +14,17 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="*" element={<Page404 />} />
-          <Route path="blog/blog-details" element={<BlogDetails />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="*" element={<Page404 />} />
+            <Route path="blog/blog-details" element={<BlogDetails />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

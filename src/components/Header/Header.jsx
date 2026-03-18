@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Header.scss';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect, useState } from 'react';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Header = () => {
               <Link className="st-site-branding" to='/' id="hero">TANDEV</Link>
             </div>
             <div className="st-main-header-right">
-              <div className="st-nav">
+              <div className="st-nav" style={{ alignItems: 'center' }}>
                 <ul className="st-nav-list st-onepage-nav" style={{ display: `${mobileToggle ? 'block' : 'none'}` }}>
                   <li><ScrollLink to="home" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Trang chủ</ScrollLink></li>
                   <li><ScrollLink to="about" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Giới thiệu</ScrollLink></li>
@@ -56,6 +57,7 @@ const Header = () => {
                   </svg>
                   <div className="sp-phone-no">0969846563</div>
                 </div>
+                <ThemeToggle />
               </div>
             </div>
           </div>

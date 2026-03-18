@@ -15,7 +15,7 @@
     },
     "homeThreeHero": {
       "imgAuthor": "/images/section/hero-img.jpg",
-      "bgImgLink": "/images/background/hero-bg-1.jpg",
+      "bgImgLink": "/images/background/background-cong-nghe-3d-01.jpg",
       "title": "Xin chào, tôi là <span>Đỗ Trọng Tấn</span>",
       "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. <br>Chuyên gia E-commerce và ERP, thành thạo VueJS, ReactJS, NestJS, Node.js."
     },

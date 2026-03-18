@@ -62,7 +62,8 @@
 }
 
 .st-dark-bg {
-  background-color: $dark-color2;
+  background-color: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
 .st-gray-bg {
@@ -91,7 +92,7 @@
 hr {
   margin: 0;
   width: 100%;
-  border-color: #000000;
+  border-color: var(--hr-color);
 }
 
 .st-fixed-bg {

@@ -10,3 +10,98 @@ $dark-color2: #070d1b;
 $dark-color3: #0a101e;
 $dark-color4: #101624;
 $dark-color5: #3f4551;
+
+// ===== CSS Custom Properties for Theming =====
+:root {
+  // Backgrounds
+  --bg-primary: #{$dark-color2};
+  --bg-secondary: #{$dark-color3};
+  --bg-card: #{$dark-color4};
+  --bg-elevated: #{$dark-color1};
+  --border-color: #{$base-color4};
+  --border-subtle: #{$dark-color5};
+
+  // Text
+  --text-primary: #{$base-color3};
+  --text-secondary: #{$base-color2};
+  --accent-color: #{$base-color1};
+
+  // Header
+  --header-bg: rgba(7, 13, 27, 0.9);
+  --header-shadow: rgba(7, 13, 27, 0.9);
+
+  // Hero
+  --hero-bg: #080e1e;
+
+  // Form
+  --input-bg: #{$dark-color4};
+  --input-border: #{$base-color4};
+  --placeholder-color: #{$dark-color5};
+
+  // Misc
+  --icon-fill: #{$dark-color5};
+  --card-bg-hover: rgba(255, 255, 255, 0.06);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --popup-bg: #1a1a2e;
+  --popup-border: rgba(255, 255, 255, 0.1);
+  --close-btn-bg: rgba(255, 255, 255, 0.08);
+  --close-btn-bg-hover: rgba(255, 255, 255, 0.15);
+  --popup-desc-color: #bbb;
+  --link-muted: #aaa;
+  --subtitle-muted: #888;
+  --icon-muted: #666;
+  --mobile-nav-bg: #{$dark-color2};
+  --mobile-nav-border: #{$dark-color4};
+  --social-btn-bg: #{$dark-color2};
+  --social-btn-border: #{$dark-color5};
+  --hr-color: #000000;
+  --section-subtitle-color: rgba(21, 27, 41, 0.5);
+}
+
+[data-theme="light"] {
+  // Backgrounds
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-elevated: #eef1f6;
+  --border-color: #d1d5db;
+  --border-subtle: #9ca3af;
+
+  // Text
+  --text-primary: #1a1a2e;
+  --text-secondary: #4b5563;
+  --accent-color: #a16207;
+
+  // Header
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-shadow: rgba(0, 0, 0, 0.08);
+
+  // Hero
+  --hero-bg: #eef1f6;
+
+  // Form
+  --input-bg: #f3f4f6;
+  --input-border: #d1d5db;
+  --placeholder-color: #9ca3af;
+
+  // Misc
+  --icon-fill: #9ca3af;
+  --card-bg-hover: rgba(0, 0, 0, 0.04);
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --popup-bg: #ffffff;
+  --popup-border: rgba(0, 0, 0, 0.1);
+  --close-btn-bg: rgba(0, 0, 0, 0.06);
+  --close-btn-bg-hover: rgba(0, 0, 0, 0.12);
+  --popup-desc-color: #4b5563;
+  --link-muted: #6b7280;
+  --subtitle-muted: #6b7280;
+  --icon-muted: #9ca3af;
+  --mobile-nav-bg: #ffffff;
+  --mobile-nav-border: #e5e7eb;
+  --social-btn-bg: #f3f4f6;
+  --social-btn-border: #d1d5db;
+  --hr-color: #e5e7eb;
+  --section-subtitle-color: rgba(0, 0, 0, 0.03);
+}

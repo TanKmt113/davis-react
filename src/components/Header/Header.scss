@@ -16,8 +16,8 @@
   }
 
   &.st-sticky-active {
-    background-color: rgba($dark-color2, 0.9);
-    box-shadow: 0 10px 10px -10px rgba($dark-color2, 0.9);
+    background-color: var(--header-bg);
+    box-shadow: 0 10px 10px -10px var(--header-shadow);
   }
 }
 
@@ -27,7 +27,7 @@
   }
 
   .st-site-header.st-style1 {
-    background-color: $dark-color2;
+    background-color: var(--bg-primary);
   }
 }
 
@@ -67,14 +67,15 @@
           padding: 15px 0;
           font-size: 15px;
           display: inline-block;
-          color: $base-color3;
+          color: var(--text-primary);
           text-transform: uppercase;
           font-family: "Roboto", sans-serif;
           font-weight: 500;
           cursor: pointer;
+          transition: color 0.3s ease;
 
           &.active {
-            color: $base-color1;
+            color: var(--accent-color);
           }
         }
       }
@@ -96,13 +97,13 @@
       }
 
       svg {
-        fill: #ffffff;
+        fill: var(--text-primary);
         width: 15px;
       }
 
       .sp-phone-no {
         padding-left: 15px;
-        color: $base-color1;
+        color: var(--accent-color);
       }
     }
   }
@@ -161,12 +162,12 @@
       position: absolute;
       width: 100vw;
       left: 0;
-      background-color: #070d1b;
+      background-color: var(--mobile-nav-bg);
       padding: 10px 0;
       display: none;
       top: 100%;
-      border-top: 1px solid #101624;
-      border-bottom: 1px solid #101624;
+      border-top: 1px solid var(--mobile-nav-border);
+      border-bottom: 1px solid var(--mobile-nav-border);
       overflow: auto;
       max-height: calc(100vh - 80px);
 
@@ -284,7 +285,7 @@
 @media screen and (min-width: 991px) {
   .st-site-header.st-style2 {
     width: 300px;
-    background: $dark-color2;
+    background: var(--bg-primary);
     height: 100vh;
     border-right: 1px solid $dark-color4;
     overflow: auto;
@@ -382,7 +383,7 @@
   }
 
   .st-site-header.st-style2 {
-    background-color: $dark-color2;
+    background-color: var(--bg-primary);
     border-bottom: 1px solid #101624;
 
     .st-nav {

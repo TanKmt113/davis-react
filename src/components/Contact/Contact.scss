@@ -21,16 +21,16 @@
 .st-form-field textarea {
   display: block;
   width: 100%;
-  color: $base-color2;
+  color: var(--text-secondary);
   padding: 12px 20px;
-  border: 1px solid $base-color4;
-  background-color: $dark-color4;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
   height: 52px;
   border-radius: 7px;
   transition: all 0.4s ease;
 
   &::placeholder {
-    color: $dark-color5;
+    color: var(--placeholder-color);
   }
 
   &:focus {
@@ -65,9 +65,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 0.5px solid $dark-color5;
+    border: 0.5px solid var(--border-subtle);
     border-radius: 50%;
-    background-color: $dark-color2;
+    background-color: var(--bg-primary);
     width: 50px;
     height: 50px;
     margin-right: 20px;
@@ -126,8 +126,8 @@
 .st-social-link {
   .st-social-btn {
     border-radius: 50px;
-    background-color: $dark-color2;
-    border: 0.5px solid $dark-color5;
+    background-color: var(--social-btn-bg);
+    border: 0.5px solid var(--social-btn-border);
     transition: all 0.4s ease;
     overflow: hidden;
     display: flex;
@@ -154,7 +154,7 @@
 
     .st-icon-name {
       font-weight: 600;
-      color: #fdfeff;
+      color: var(--text-primary);
       overflow: hidden;
       max-width: 0;
       transition: all 0.5s ease;

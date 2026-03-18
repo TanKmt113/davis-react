@@ -36,7 +36,7 @@ font-weight: 400;
 .st-progressbar {
 width: 100%;
 height: 2px;
-background-color: $dark-color5;
+background-color: var(--border-subtle);
 }
 
 .st-progressbar-in {

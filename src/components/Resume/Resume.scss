@@ -24,9 +24,9 @@
   &::before {
     position: absolute;
     content: "";
-    border: 2px solid $base-color4;
+    border: 2px solid var(--border-color);
     border-radius: 50%;
-    background-color: $dark-color4;
+    background-color: var(--bg-card);
     width: 13px;
     height: 13px;
     top: 0px;
@@ -68,7 +68,7 @@
 .st-resume-timeline-wrap {
   padding-left: 40px;
   margin-left: 20px;
-  border-left: 1px solid $base-color4;
+  border-left: 1px solid var(--border-color);
 }
 
 @media only screen and (max-width:991px) {

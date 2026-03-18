@@ -2,8 +2,8 @@
 
 // ========== Grid Card Layout ==========
 .st-portfolio-card {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 14px;
   padding: 32px 28px;
   margin-bottom: 30px;
@@ -14,12 +14,12 @@
 
   &:hover {
     transform: translateY(-5px);
-    border-color: $base-color1;
+    border-color: var(--accent-color);
     box-shadow: 0 16px 40px rgba(0, 210, 138, 0.1);
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--card-bg-hover);
 
     .st-portfolio-card-link {
-      color: $base-color1;
+      color: var(--accent-color);
     }
 
     .st-portfolio-card-icon svg {
@@ -34,7 +34,7 @@
   svg {
     width: 40px;
     height: 40px;
-    color: #666;
+    color: var(--icon-muted);
     transition: color 0.3s ease;
   }
 }
@@ -42,12 +42,12 @@
 .st-portfolio-card-title {
   font-size: 20px;
   font-weight: 600;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .st-portfolio-card-subtitle {
-  color: #888;
+  color: var(--subtitle-muted);
   font-size: 14px;
   line-height: 1.6;
   margin-bottom: 20px;
@@ -58,7 +58,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #aaa;
+  color: var(--link-muted);
   font-size: 14px;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -88,8 +88,8 @@
 
 .st-portfolio-popup {
   position: relative;
-  background: #1a1a2e;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--popup-bg);
+  border: 1px solid var(--popup-border);
   border-radius: 16px;
   padding: 40px;
   max-width: 640px;
@@ -103,9 +103,9 @@
   position: absolute;
   top: 16px;
   right: 16px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--close-btn-bg);
   border: none;
-  color: #fff;
+  color: var(--text-primary);
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -121,14 +121,14 @@
   }
 
   &:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--close-btn-bg-hover);
   }
 }
 
 .st-portfolio-popup-title {
   font-size: 26px;
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   margin-bottom: 12px;
   padding-right: 40px;
 }
@@ -145,7 +145,7 @@
 }
 
 .st-portfolio-popup-desc {
-  color: #bbb;
+  color: var(--popup-desc-color);
   font-size: 15px;
   line-height: 1.8;
   margin-bottom: 28px;

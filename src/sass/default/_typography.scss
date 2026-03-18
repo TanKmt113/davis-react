@@ -40,13 +40,14 @@ Version: 1.0.0
 
 body,
 html {
-  color: $base-color2;
-  background-color: $dark-color3;
+  color: var(--text-secondary);
+  background-color: var(--bg-secondary);
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6em;
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
@@ -56,11 +57,12 @@ h4,
 h3,
 h6 {
   clear: both;
-  color: $base-color3;
+  color: var(--text-primary);
   padding: 0;
   margin: 0 0 10px 0;
   font-weight: 700;
   line-height: 1.2em;
+  transition: color 0.3s ease;
 }
 
 h1 {

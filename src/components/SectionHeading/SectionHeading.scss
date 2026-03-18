@@ -18,7 +18,7 @@
     &::before {
       content: "";
       position: absolute;
-      background-color: $dark-color5;
+      background-color: var(--border-subtle);
       width: 170px;
       height: 2px;
       bottom: -16px;
@@ -46,7 +46,7 @@
     transform: translateX(-50%);
     font-size: 90px;
     font-weight: 700;
-    color: rgba($dark-color1, 0.5);
+    color: var(--section-subtitle-color);
     margin: 0;
     margin-top: -17px;
     width: 100%;

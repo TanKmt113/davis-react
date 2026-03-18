@@ -5,9 +5,11 @@ import SocialLinks from '../SocialLinks/SocialLinks';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect } from 'react';
 import WaterWave from 'react-water-wave';
+import { useTheme } from '../../context/ThemeContext';
 
 const Hero = ({ data, socialData }) => {
   const { subTitle, designation, imgLink, title, bgImgLink } = data;
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +25,13 @@ const Hero = ({ data, socialData }) => {
     };
   }, []);
 
+  const currentBgImg = theme === 'light' ? '/images/background/hero-bg-1.jpg' : bgImgLink;
+
   return (
     <section id="home" className="st-hero-wrap">
       <div
         className="st-hero st-bg st-style1"
-        style={{ backgroundImage: `url(${bgImgLink})` }}
+        style={{ backgroundImage: `url(${currentBgImg})` }}
       >
         <div className="st-height-b80 st-height-lg-b80"></div>
         <div className="container">
