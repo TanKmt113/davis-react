@@ -11,7 +11,7 @@ const Iconbox = ({ data }) => {
      <div
         className="text-center mb-3"
         style={{
-          width: window.innerWidth < 768 ? "90%" : "30%",
+          width: window.innerWidth < 768 ? "90%" : "50%",
           margin: "0 auto"
         }}
       >

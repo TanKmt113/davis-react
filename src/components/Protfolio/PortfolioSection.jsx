@@ -23,7 +23,7 @@ const PortfolioSection = ({ data }) => {
     <>
       <section id="portfolio" className="st-dark-bg">
         <div className="st-height-b100 st-height-lg-b80"></div>
-        <SectionHeading title={'Dự án'} />
+        <SectionHeading title={'Dự Án Tiêu Biểu'} />
         <div className="container">
           <div className="row">
             {portfolioItems.map((element, index) => (

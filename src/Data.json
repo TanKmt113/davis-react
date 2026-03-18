@@ -3,7 +3,7 @@
     "homeOneHero": {
       "bgImgLink": "/images/background/hero-bg.jpg",
       "imgLink": "/images/section/av2.jpg",
-      "title": "Đỗ Trọng <br /> Tấn",
+      "title": "Đỗ Trọng Tấn",
       "subTitle": "",
       "designation": "Fullstack Developer"
     },
@@ -154,15 +154,6 @@
   "portfolioData": {
     "portfolioItems": [
       {
-        "title": "Hệ thống Mua sắm Tập trung (MSTT)",
-        "subTitle": "Tích hợp ERP / SAP B1",
-        "description": "Kiến trúc và triển khai hệ thống mua sắm tập trung, tự động hóa fullflow từ lập kế hoạch → phê duyệt → đặt hàng, tích hợp real-time SAP B1 Service Layer API.\n\nKết quả: Giảm 60% thời gian xử lý đơn hàng (từ 8h xuống 3.2h), xử lý 10K+ orders/tháng không lỗi.",
-        "productLink": "#",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "200"
-      },
-      {
         "title": "Hệ thống POS Bán lẻ",
         "subTitle": "Bán lẻ / POS",
         "description": "Phát triển hệ thống POS bán lẻ multi-store, tích hợp hardware (thermal printer, barcode scanner, touchscreen), custom driver SDK.\n\nKết quả: Đạt 99.8% uptime cho 25+ điểm bán, xử lý 5K transactions/ngày.",
@@ -190,15 +181,6 @@
         "delay": "500"
       },
       {
-        "title": "n8n Workflow Automation",
-        "subTitle": "Tự động hóa / Đồng bộ ERP",
-        "description": "Xây dựng các luồng tự động hóa phức tạp kết nối nhiều hệ thống ERP qua n8n. Thiết kế workflow đồng bộ dữ liệu, gửi thông báo, xử lý đơn hàng tự động.",
-        "productLink": "#",
-        "effect": "fade-up",
-        "duration": "500",
-        "delay": "600"
-      },
-      {
         "title": "WordPress E-commerce",
         "subTitle": "WordPress / WooCommerce",
         "description": "Xây dựng trang thương mại điện tử chuyên nghiệp trên nền tảng WordPress và WooCommerce. Tối ưu SEO, tích hợp cổng thanh toán và vận chuyển nội địa.",
@@ -206,7 +188,26 @@
         "effect": "fade-up",
         "duration": "500",
         "delay": "700"
+      },
+      {
+        "title": "Shopify Custom Theme & App",
+        "subTitle": "Shopify / Liquid / App Integration",
+        "description": "Phát triển theme Shopify custom từ Figma, tối ưu UX/UI và tốc độ tải trang. Xây dựng logic dynamic bằng Liquid, tích hợp Shopify App (Klaviyo, Judge.me, Shopify Flow) và custom API.\n\nKết quả: Tăng tốc độ tải trang 40%, cải thiện SEO (PageSpeed 90+), tăng conversion rate 20%.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "800"
+      },
+      {
+        "title": "Haravan E-commerce Customization",
+        "subTitle": "Haravan / Liquid / Frontend",
+        "description": "Tùy chỉnh giao diện và logic bán hàng trên Haravan bằng Liquid, xây dựng các module như combo sản phẩm, flash sale, và upsell/cross-sell.\n\nKết quả: Tăng AOV (Average Order Value) 18%, cải thiện trải nghiệm người dùng trên mobile.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "1000"
       }
+ 
     ]
   },
   "blogData": {
