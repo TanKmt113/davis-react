@@ -3,6 +3,33 @@
 #st-alert {
   font-size: 15px;
   font-weight: 300;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  border-radius: 7px;
+  display: none; // Hidden by default
+  transition: all 0.4s ease;
+
+  &.st-success {
+    display: block;
+    background-color: rgba(40, 167, 69, 0.1);
+    color: #28a745;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+  }
+
+  &.st-error {
+    display: block;
+    background-color: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    border: 1px solid rgba(220, 53, 69, 0.2);
+  }
+}
+
+.st-btn {
+  &.st-loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }
 
 .st-contact-title {
