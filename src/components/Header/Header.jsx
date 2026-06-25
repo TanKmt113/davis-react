@@ -1,70 +1,120 @@
-import { Link } from 'react-router-dom';
-import './Header.scss';
+import { useState, useEffect } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { useEffect, useState } from 'react';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { Icon } from '@iconify/react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileToggle, setMobileToggle] = useState(false);
-
-  const handleToggleMenu = () => {
-    setMobileToggle(!mobileToggle);
-  }
-
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= 10) {
+      if (window.scrollY >= 20) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navLinks = [
+    { to: 'home', label: 'Trang chủ' },
+    { to: 'about', label: 'Giới thiệu' },
+    { to: 'skills', label: 'Kỹ năng' },
+    { to: 'services', label: 'Dịch vụ' },
+    { to: 'portfolio', label: 'Dự án' },
+    { to: 'contact', label: 'Liên hệ' }
+  ];
 
   return (
-    <header className={`st-site-header st-sticky-header st-style1 ${isScrolled ? 'st-sticky-active' : ''}`}>
-      <div className="st-main-header">
-        <div className="container">
-          <div className="st-main-header-in">
-            <div className="st-main-header-left">
-              <Link className="st-site-branding" to='/' id="hero">TANDEV</Link>
-            </div>
-            <div className="st-main-header-right">
-              <div className="st-nav" style={{ alignItems: 'center' }}>
-                <ul className="st-nav-list st-onepage-nav" style={{ display: `${mobileToggle ? 'block' : 'none'}` }}>
-                  <li><ScrollLink to="home" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Trang chủ</ScrollLink></li>
-                  <li><ScrollLink to="about" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Giới thiệu</ScrollLink></li>
-                  <li><ScrollLink to="resume" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Hồ sơ</ScrollLink></li>
-                  <li><ScrollLink to="portfolio" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Dự án</ScrollLink></li>
-                  {/* <li><ScrollLink to="blog" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Bài viết</ScrollLink></li> */}
-                  <li><ScrollLink to="contact" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Liên hệ</ScrollLink></li>
-                </ul>
-                <div className={`st-munu-toggle ${mobileToggle ? "st-toggle-active" : ""} `} onClick={handleToggleMenu}>
-                  <span></span>
-                </div>
-                <div className="sp-phone">
-                  <svg viewBox="0 0 513.64 513.64">
-                    <path d="M499.66,376.96l-71.68-71.68c-25.6-25.6-69.12-15.359-79.36,17.92c-7.68,23.041-33.28,35.841-56.32,30.72c-51.2-12.8-120.32-79.36-133.12-133.12c-7.68-23.041,7.68-48.641,30.72-56.32c33.28-10.24,43.52-53.76,17.92-79.36l-71.68-71.68c-20.48-17.92-51.2-17.92-69.12,0l-48.64,48.64c-48.64,51.2,5.12,186.88,125.44,307.2c120.32,120.32,256,176.641,307.2,125.44l48.64-48.64C517.581,425.6,517.581,394.88,499.66,376.96z" />
-                  </svg>
-                  <div className="sp-phone-no">0969846563</div>
-                </div>
-                <ThemeToggle />
-              </div>
-            </div>
-          </div>
+    <nav className={`fixed top-0 w-full z-50 border-b border-white/5 shadow-2xl transition-all duration-500 bg-surface/60 backdrop-blur-xl ${isScrolled ? 'py-3' : 'py-5'}`}>
+      <div className="flex justify-between items-center px-6 md:px-8 max-w-[1200px] mx-auto w-full">
+        {/* Logo */}
+        <ScrollLink 
+          to="home" 
+          spy={true} 
+          smooth={true} 
+          offset={-80} 
+          duration={500} 
+          className="font-headline-md text-headline-md font-bold tracking-tighter text-text-primary hover:scale-105 transition-transform duration-300 cursor-pointer"
+        >
+          TANDEV
+        </ScrollLink>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex gap-8 items-center">
+          {navLinks.map((link, idx) => (
+            <ScrollLink
+              key={idx}
+              to={link.to}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              activeClass="text-primary font-semibold"
+              className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
+            >
+              {link.label}
+            </ScrollLink>
+          ))}
+        </div>
+
+        {/* Action Button & Theme Toggle */}
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            className="hidden sm:inline-flex bg-gradient-to-r from-accent-purple to-primary text-text-primary px-6 py-2 rounded-full font-mono-label text-mono-label hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(59,130,246,0.3)] hover:shadow-[0_0_25px_rgba(59,130,246,0.6)] cursor-pointer"
+          >
+            Hợp tác
+          </ScrollLink>
+
+          {/* Mobile menu toggle */}
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-text-primary hover:text-primary transition-colors"
+          >
+            <Icon icon={mobileMenuOpen ? "material-symbols:close-rounded" : "material-symbols:menu-rounded"} className="text-2xl" />
+          </button>
         </div>
       </div>
-    </header >
-  )
-}
+
+      {/* Mobile Links Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 w-full bg-surface/95 backdrop-blur-xl border-b border-white/5 py-6 px-8 flex flex-col gap-4 shadow-xl z-50">
+          {navLinks.map((link, idx) => (
+            <ScrollLink
+              key={idx}
+              to={link.to}
+              spy={true}
+              smooth={true}
+              offset={-80}
+              duration={500}
+              onClick={() => setMobileMenuOpen(false)}
+              activeClass="text-primary font-semibold pl-2 border-l-2 border-primary"
+              className="text-base font-medium text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
+            >
+              {link.label}
+            </ScrollLink>
+          ))}
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full text-center bg-gradient-to-r from-accent-purple to-primary text-text-primary px-6 py-2.5 rounded-full font-mono-label text-mono-label mt-2"
+          >
+            Hợp tác
+          </ScrollLink>
+        </div>
+      )}
+    </nav>
+  );
+};
 
 export default Header;

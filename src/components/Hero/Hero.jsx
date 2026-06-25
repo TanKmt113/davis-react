@@ -1,79 +1,93 @@
 import PropTypes from 'prop-types';
-import './Hero.scss';
-import parser from 'html-react-parser';
-import SocialLinks from '../SocialLinks/SocialLinks';
+import { useEffect, useState } from 'react';
 import { Link as ScrollLink } from 'react-scroll';
-import { useEffect } from 'react';
-import WaterWave from 'react-water-wave';
-import { useTheme } from '../../context/ThemeContext';
 
-const Hero = ({ data, socialData }) => {
-  const { subTitle, designation, imgLink, title, bgImgLink } = data;
-  const { theme } = useTheme();
-
+const Hero = ({ data }) => {
+  const { title, designation, imgLink } = data;
+  const [typedText, setTypedText] = useState('');
+  
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollValue = window.scrollY;
-      const heroElements = document.querySelector('.st-hero-wrap .st-hero-img');
-      if (heroElements) {
-        heroElements.style.right = `${scrollValue * -0.1}px`;
+    let index = 0;
+    const textToType = designation || "Fullstack Developer";
+    const timer = setInterval(() => {
+      setTypedText((prev) => prev + textToType.charAt(index));
+      index++;
+      if (index >= textToType.length) {
+        clearInterval(timer);
       }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const currentBgImg = theme === 'light' ? '/images/background/hero-bg-1.jpg' : bgImgLink;
+    }, 100);
+    return () => clearInterval(timer);
+  }, [designation]);
 
   return (
-    <section id="home" className="st-hero-wrap">
-      <div
-        className="st-hero st-bg st-style1"
-        style={{ backgroundImage: `url(${currentBgImg})` }}
-      >
-        <div className="st-height-b80 st-height-lg-b80"></div>
-        <div className="container">
-          <div className="st-hero-text">
-            <h3 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-              {subTitle}
-            </h3>
-            <h1 data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-              {parser(title)}
-            </h1>
-            <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-              {designation}
-            </h2>
-            <div
-              className="st-hero-btn"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="500"
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent text-text-primary px-4 py-20 z-10">
+      {/* Background Blobs */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+        <div className="absolute w-[500px] h-[500px] rounded-full bg-primary/20 blur-[80px] md:blur-[120px] top-[-100px] left-[-100px] animate-float-1"></div>
+        <div className="absolute w-[400px] h-[400px] rounded-full bg-accent-purple/20 blur-[80px] md:blur-[120px] bottom-[100px] right-[-50px] animate-float-2"></div>
+        <div className="absolute w-[300px] h-[300px] rounded-full bg-primary-container/15 blur-[80px] md:blur-[100px] top-[30%] left-[40%] animate-float-3"></div>
+      </div>
+
+      <div className="glass-card rounded-2xl p-8 md:p-16 max-w-4xl w-full text-center relative overflow-hidden group z-10">
+        {/* Subtle internal glow on hover */}
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        
+        <div className="relative z-10 flex flex-col items-center">
+          {/* Avatar/Profile Image */}
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-2 border-border-slate mb-8 overflow-hidden relative group-hover:border-primary/50 transition-colors duration-500">
+            <div 
+              className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+              style={{ backgroundImage: `url(${imgLink || "/images/section/av2.jpg"})` }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-tr from-accent-purple/20 to-primary/20 mix-blend-overlay"></div>
+          </div>
+
+          <h1 className="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-text-primary mb-4 tracking-tighter">
+            {title}
+          </h1>
+
+          <h2 className="font-headline-md text-headline-md text-primary mb-6 h-[40px] flex items-center justify-center">
+            <span className="after:content-['|'] after:animate-blink after:ml-0.5">
+              {typedText}
+            </span>
+          </h2>
+
+          <p className="font-body-lg text-body-lg text-text-secondary max-w-2xl mx-auto mb-10">
+            Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. 
+            Chuyên gia E-commerce và ERP, thành thạo VueJS, ReactJS, NestJS, Node.js.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+            <ScrollLink 
+              to="portfolio" 
+              smooth={true} 
+              duration={500} 
+              className="bg-gradient-to-r from-accent-purple to-primary text-text-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] flex items-center gap-2 group cursor-pointer"
             >
-              <ScrollLink className="st-btn st-style1 st-color1" to="contact">
-                Hợp tác
-              </ScrollLink>
-            </div>
+              Xem dự án
+              <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+            </ScrollLink>
+            <ScrollLink 
+              to="contact" 
+              smooth={true} 
+              duration={500} 
+              className="border border-border-slate hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-text-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 flex items-center gap-2 cursor-pointer"
+            >
+              Liên hệ
+              <span className="material-symbols-outlined text-[18px]">mail</span>
+            </ScrollLink>
+          </div>
+
+          <div className="mt-12 flex flex-wrap justify-center gap-3">
+            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full font-mono-label text-mono-label">ReactJS / Next.js</span>
+            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full font-mono-label text-mono-label">VueJS / Nuxt</span>
+            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full font-mono-label text-mono-label">Node.js / NestJS</span>
+            <span className="bg-primary/10 text-primary px-4 py-1.5 rounded-full font-mono-label text-mono-label">Docker / DevOps</span>
           </div>
         </div>
-      </div>
-      <div className="st-hero-img st-to-right">
-        <img
-          src={`${imgLink}`}
-          alt="Hero"
-          data-aos="fade-left"
-          data-aos-delay="1000"
-          data-aos-duration="1000"
-        />
-        <div
-          className="st-social-group"
-          data-aos="fade-right"
-          data-aos-delay="1000"
-          data-aos-duration="1000"
-        >
-          <SocialLinks data={socialData} />
-        </div>
+
+        {/* Bottom decorative line */}
+        <div className="absolute bottom-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
       </div>
     </section>
   );
@@ -81,7 +95,6 @@ const Hero = ({ data, socialData }) => {
 
 Hero.propTypes = {
   data: PropTypes.object,
-  socialData: PropTypes.array,
 };
 
 export default Hero;

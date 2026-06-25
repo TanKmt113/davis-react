@@ -1,50 +1,26 @@
 import { useTheme } from '../../context/ThemeContext';
-import './ThemeToggle.scss';
+import { Icon } from '@iconify/react';
 
 const ThemeToggle = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
     <button
-      className={`theme-toggle ${theme === 'light' ? 'theme-toggle--light' : ''}`}
       onClick={toggleTheme}
+      className={`w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 ml-4 shrink-0 
+        ${theme === 'light' 
+          ? 'bg-black/5 border border-black/10 text-amber-700 hover:bg-amber-700/10 hover:border-amber-700/30' 
+          : 'bg-white/10 border border-white/10 text-yellow-400 hover:bg-yellow-400/10 hover:border-yellow-400/30'
+        }
+        md:relative fixed bottom-8 right-5 md:bottom-auto md:right-auto z-[999] md:z-auto shadow-lg md:shadow-none
+      `}
       aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       title={theme === 'dark' ? 'Chế độ sáng' : 'Chế độ tối'}
     >
-      <div className="theme-toggle__icon-wrapper">
-        {/* Sun icon */}
-        <svg
-          className="theme-toggle__sun"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="12" cy="12" r="5" />
-          <line x1="12" y1="1" x2="12" y2="3" />
-          <line x1="12" y1="21" x2="12" y2="23" />
-          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-          <line x1="1" y1="12" x2="3" y2="12" />
-          <line x1="21" y1="12" x2="23" y2="12" />
-          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-        </svg>
-        {/* Moon icon */}
-        <svg
-          className="theme-toggle__moon"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-      </div>
+      <Icon 
+        icon={theme === 'light' ? "material-symbols:wb-sunny-rounded" : "material-symbols:nightlight-round"} 
+        className="text-xl transition-transform duration-500 hover:rotate-12 scale-110" 
+      />
     </button>
   );
 };

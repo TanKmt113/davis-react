@@ -1,0 +1,246 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+/* Custom variant to support data-theme toggling in Tailwind v4 */
+@variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #020617;
+  --bg-secondary: #0b1326;
+  --bg-card: rgba(16, 22, 36, 0.55);
+  --bg-elevated: rgba(30, 41, 59, 0.5);
+  --border-color: rgba(255, 255, 255, 0.05);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+
+  /* Text & Accent */
+  --text-primary: #fdfeff;
+  --text-secondary: #a9adb8;
+  --accent-color: #3b82f6;
+  --accent-purple: #8b5cf6;
+
+  /* Header */
+  --header-bg: rgba(2, 6, 23, 0.85);
+  --header-shadow: rgba(0, 0, 0, 0.5);
+
+  /* Hero */
+  --hero-bg: #020617;
+
+  /* Form */
+  --input-bg: rgba(16, 22, 36, 0.3);
+  --input-border: rgba(255, 255, 255, 0.05);
+  --placeholder-color: #64748b;
+
+  /* Misc */
+  --icon-fill: #64748b;
+  --card-bg-hover: rgba(255, 255, 255, 0.08);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --popup-bg: #0b1326;
+  --popup-border: rgba(255, 255, 255, 0.1);
+  --close-btn-bg: rgba(255, 255, 255, 0.08);
+  --close-btn-bg-hover: rgba(255, 255, 255, 0.15);
+  --popup-desc-color: #a9adb8;
+  --link-muted: #64748b;
+  --subtitle-muted: #64748b;
+  --icon-muted: #475569;
+  --mobile-nav-bg: #020617;
+  --mobile-nav-border: rgba(255, 255, 255, 0.05);
+  --social-btn-bg: #020617;
+  --social-btn-border: rgba(255, 255, 255, 0.1);
+  --hr-color: rgba(255, 255, 255, 0.05);
+  --section-subtitle-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="light"] {
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-elevated: rgba(241, 245, 249, 0.9);
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-subtle: rgba(0, 0, 0, 0.1);
+
+  /* Text & Accent */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --accent-color: #2563eb;
+  --accent-purple: #7c3aed;
+
+  /* Header */
+  --header-bg: rgba(248, 250, 252, 0.9);
+  --header-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Hero */
+  --hero-bg: #f8fafc;
+
+  /* Form */
+  --input-bg: rgba(255, 255, 255, 0.8);
+  --input-border: rgba(0, 0, 0, 0.06);
+  --placeholder-color: #94a3b8;
+
+  /* Misc */
+  --icon-fill: #94a3b8;
+  --card-bg-hover: rgba(0, 0, 0, 0.04);
+  --card-bg: rgba(0, 0, 0, 0.02);
+  --card-border: rgba(0, 0, 0, 0.06);
+  --popup-bg: #ffffff;
+  --popup-border: rgba(0, 0, 0, 0.1);
+  --close-btn-bg: rgba(0, 0, 0, 0.06);
+  --close-btn-bg-hover: rgba(0, 0, 0, 0.12);
+  --popup-desc-color: #475569;
+  --link-muted: #94a3b8;
+  --subtitle-muted: #94a3b8;
+  --icon-muted: #94a3b8;
+  --mobile-nav-bg: #ffffff;
+  --mobile-nav-border: rgba(0, 0, 0, 0.06);
+  --social-btn-bg: #f1f5f9;
+  --social-btn-border: rgba(0, 0, 0, 0.1);
+  --hr-color: rgba(0, 0, 0, 0.06);
+  --section-subtitle-color: rgba(0, 0, 0, 0.02);
+}
+
+@layer base {
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Core Design System Utilities from Stitch MCP */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gradient-border-top {
+  position: relative;
+}
+
+.gradient-border-top::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent-purple), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+/* Float and Blink Animations */
+@keyframes float {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.92); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.animate-float-1 {
+  animation: float 10s infinite ease-in-out;
+}
+
+.animate-float-2 {
+  animation: float 10s infinite ease-in-out 2s reverse;
+}
+
+.animate-float-3 {
+  animation: float 12s infinite ease-in-out 4s;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Resume nested list styles */
+.resume-list-container ul {
+  list-style-type: disc;
+  margin-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.resume-list-container li {
+  margin-bottom: 0.5rem;
+}
+
+.resume-list-container strong {
+  color: var(--accent-color);
+}
+
+.resume-list-container em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* Slick dots and carousel customization */
+.portfolio-slider .slick-list {
+  overflow: visible;
+}
+
+.portfolio-slider .slick-slide {
+  padding: 0 12px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.portfolio-slider .slick-dots {
+  position: absolute;
+  bottom: -48px;
+  list-style: none;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.portfolio-slider .slick-dots li {
+  margin: 0 6px;
+  display: inline-block;
+}
+
+.portfolio-slider .slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 24px;
+  height: 4px;
+  padding: 5px 0;
+  cursor: pointer;
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-slider .slick-dots li button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.portfolio-slider .slick-dots li.slick-active button {
+  background: var(--accent-color);
+  width: 48px;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+}
