@@ -52,7 +52,7 @@ const Hero = ({ data }) => {
             {title}
           </h1>
 
-          <h2 className="hero-designation hero-reveal font-headline-md text-headline-md text-primary mb-6 h-[40px] flex items-center justify-center">
+          <h2 className="hero-designation hero-reveal font-headline-md text-xl md:text-headline-md text-primary mb-6 min-h-[40px] flex items-center justify-center px-2 text-center leading-snug md:leading-[40px]">
             <span className="after:content-['|'] after:animate-blink after:ml-0.5">
               {typedText}
             </span>
