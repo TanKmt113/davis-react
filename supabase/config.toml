@@ -1,0 +1,18 @@
+# Supabase local config — https://supabase.com/docs/guides/cli/config
+
+project_id = "dbilfrscakaxahxsvzld"
+
+[api]
+enabled = true
+
+[functions.projects]
+verify_jwt = false
+
+[functions.health]
+verify_jwt = false
+
+[functions.projects-admin]
+verify_jwt = false
+
+[functions.contact-form]
+verify_jwt = false

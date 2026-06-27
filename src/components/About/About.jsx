@@ -3,7 +3,7 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import { Icon } from '@iconify/react';
 
 const About = ({ data }) => {
-  const { imgLink, title, subtitle, text, details, cvPdf } = data;
+  const { imgLink, title, subtitle, text, details, cvPdf, tags, stats, experienceBadge } = data;
 
   return (
     <section id="about" className="relative py-24 bg-transparent overflow-hidden z-10">
@@ -15,7 +15,7 @@ const About = ({ data }) => {
 
       <div className="max-w-container-max mx-auto w-full px-6 relative z-10">
         <div className="mb-16 text-center">
-          <SectionHeading title="Thông Tin Cá Nhân" />
+          <SectionHeading title="Đối tác công nghệ tin cậy" subtitle="Hiểu nghiệp vụ — triển khai đúng hạn — bàn giao ổn định" />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -28,7 +28,7 @@ const About = ({ data }) => {
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-purple to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             <div>
-              <span className="font-mono-label text-xs text-primary uppercase tracking-widest font-semibold">Giới thiệu</span>
+              <span className="font-mono-label text-xs text-primary uppercase tracking-widest font-semibold">Giá trị hợp tác</span>
               <h3 className="font-headline-lg-mobile text-3xl md:text-4xl text-text-primary mt-2 mb-2 tracking-tight font-bold">
                 {title}
               </h3>
@@ -41,10 +41,9 @@ const About = ({ data }) => {
             </div>
             
             <div className="mt-8 flex flex-wrap gap-2.5">
-              <span className="bg-primary/5 border border-primary/10 text-primary px-3.5 py-1.5 rounded-full font-mono-label text-xs">VueJS / Nuxt</span>
-              <span className="bg-primary/5 border border-primary/10 text-primary px-3.5 py-1.5 rounded-full font-mono-label text-xs">ReactJS / Next.js</span>
-              <span className="bg-primary/5 border border-primary/10 text-primary px-3.5 py-1.5 rounded-full font-mono-label text-xs">Node.js / NestJS</span>
-              <span className="bg-primary/5 border border-primary/10 text-primary px-3.5 py-1.5 rounded-full font-mono-label text-xs">E-commerce / ERP</span>
+              {(tags ?? []).map((tag, i) => (
+                <span key={i} className="bg-primary/5 border border-primary/10 text-primary px-3.5 py-1.5 rounded-full font-mono-label text-xs">{tag}</span>
+              ))}
             </div>
           </div>
 
@@ -65,8 +64,8 @@ const About = ({ data }) => {
               <div className="absolute inset-0 bg-gradient-to-tr from-accent-purple/35 to-primary/20 mix-blend-overlay"></div>
               
               <div className="absolute bottom-4 left-4 bg-bg-deep/80 backdrop-blur-md border border-white/10 px-4 py-2.5 rounded-xl">
-                <p className="font-mono-label text-[10px] text-primary uppercase tracking-widest font-bold">Kinh nghiệm</p>
-                <p className="font-label-caps text-xs text-text-primary font-bold mt-0.5">3+ Năm Thực Chiến</p>
+                <p className="font-mono-label text-[10px] text-primary uppercase tracking-widest font-bold">{experienceBadge?.label ?? 'Kinh nghiệm'}</p>
+                <p className="font-label-caps text-xs text-text-primary font-bold mt-0.5">{experienceBadge?.value ?? '3+ Năm Thực Chiến'}</p>
               </div>
             </div>
           </div>
@@ -89,6 +88,7 @@ const About = ({ data }) => {
                         icon={
                           item.title.toLowerCase().includes('thoại') ? 'material-symbols:phone-android-outline-rounded' :
                           item.title.toLowerCase().includes('email') ? 'material-symbols:mail-outline' :
+                          item.title.toLowerCase().includes('phạm vi') ? 'material-symbols:handshake-outline' :
                           item.title.toLowerCase().includes('chỉ') ? 'material-symbols:location-on-outline' :
                           'material-symbols:school-outline'
                         } 
@@ -110,7 +110,7 @@ const About = ({ data }) => {
                 download 
                 className="w-full inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full font-label-caps text-label-caps text-text-primary uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] gap-2 cursor-pointer text-xs"
               >
-                Tải CV cá nhân
+                Tải hồ sơ năng lực
                 <Icon icon="material-symbols:download-rounded" className="text-base" />
               </a>
             </div>
@@ -124,32 +124,16 @@ const About = ({ data }) => {
           >
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary to-accent-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
-            <h4 className="font-headline-md text-xl text-text-primary mb-8 tracking-tight font-semibold">Thành tựu & Chỉ số</h4>
+            <h4 className="font-headline-md text-xl text-text-primary mb-8 tracking-tight font-semibold">Cam kết & Kết quả</h4>
             
             <div className="grid grid-cols-2 gap-4 md:gap-6">
-              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden">
-                <span className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-purple font-headline-lg">3+</span>
-                <p className="font-label-caps text-xs text-text-primary mt-2 font-bold uppercase tracking-wider">Năm thực chiến</p>
-                <p className="text-[11px] text-text-secondary mt-1 leading-normal">Kinh nghiệm chuyên sâu về E-commerce & hệ thống ERP.</p>
-              </div>
-
-              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden">
-                <span className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-purple font-headline-lg">99.8%</span>
-                <p className="font-label-caps text-xs text-text-primary mt-2 font-bold uppercase tracking-wider">Uptime Hệ thống</p>
-                <p className="text-[11px] text-text-secondary mt-1 leading-normal">Đảm bảo tính ổn định tối đa cho 25+ điểm bán POS.</p>
-              </div>
-
-              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden">
-                <span className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-purple font-headline-lg">60%</span>
-                <p className="font-label-caps text-xs text-text-primary mt-2 font-bold uppercase tracking-wider">Tối ưu quy trình</p>
-                <p className="text-[11px] text-text-secondary mt-1 leading-normal">Giảm thời gian xử lý đơn hàng thực tế từ 8h xuống 3.2h.</p>
-              </div>
-
-              <div className="p-5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden">
-                <span className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-purple font-headline-lg">95+</span>
-                <p className="font-label-caps text-xs text-text-primary mt-2 font-bold uppercase tracking-wider">Điểm PageSpeed</p>
-                <p className="text-[11px] text-text-secondary mt-1 leading-normal">LCP đạt 1.5s tối ưu trải nghiệm và tỷ lệ chuyển đổi.</p>
-              </div>
+              {(stats ?? []).map((stat, i) => (
+                <div key={i} className="p-5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden">
+                  <span className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent-purple font-headline-lg">{stat.value}</span>
+                  <p className="font-label-caps text-xs text-text-primary mt-2 font-bold uppercase tracking-wider">{stat.label}</p>
+                  <p className="text-[11px] text-text-secondary mt-1 leading-normal">{stat.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

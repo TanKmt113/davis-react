@@ -1,0 +1,2 @@
+-- CMS tables (site_content, services, skill_categories, social_links)
+-- Applied via Supabase MCP

@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import Preloader from '../Preloader/Preloader';
+import FloatingContact from '../FloatingContact/FloatingContact';
+import SeoHead from '../Seo/SeoHead';
 
 const Layout = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +17,7 @@ const Layout = () => {
 
   return (
     <>
+      <SeoHead />
       {isLoading ? <Preloader /> : (
         <div className="relative min-h-screen bg-bg-deep text-text-primary overflow-x-hidden">
           {/* Fixed Background Blobs */}
@@ -30,6 +33,7 @@ const Layout = () => {
               <Outlet />
             </main>
             <Footer />
+            <FloatingContact />
           </div>
         </div>
       )}

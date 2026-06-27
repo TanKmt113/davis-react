@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
+import { sendContactMessage } from '../../services/contactService';
 
 const Contact = ({ data }) => {
   const { title, text } = data;
@@ -32,58 +33,19 @@ const Contact = ({ data }) => {
     setLoading(true);
     setAlert({ show: false, message: '', type: '' });
 
-    const botToken = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    const chatId = import.meta.env.VITE_TELEGRAM_CHAT_ID;
-
-    if (!botToken || !chatId || botToken === 'your_bot_token_here') {
+    try {
+      await sendContactMessage(formData);
       setAlert({
         show: true,
-        message: 'Lỗi: Chưa cấu hình Token hoặc Chat ID trong .env',
-        type: 'bg-red-500/10 text-red-400 border-red-500/20',
+        message: 'Cảm ơn! Tin nhắn của bạn đã được gửi thành công.',
+        type: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
       });
-      setLoading(false);
-      return;
-    }
-
-    const message = `
-📩 *Tin nhắn mới từ Website*
-👤 *Tên:* ${formData.name}
-📧 *Email:* ${formData.email}
-📝 *Chủ đề:* ${formData.subject}
-💬 *Lời nhắn:* ${formData.msg}
-    `;
-
-    try {
-      const response = await fetch(
-        `https://api.telegram.org/bot${botToken}/sendMessage`,
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            chat_id: chatId,
-            text: message,
-            parse_mode: 'Markdown',
-          }),
-        }
-      );
-
-      if (response.ok) {
-        setAlert({
-          show: true,
-          message: 'Cảm ơn! Tin nhắn của bạn đã được gửi thành công.',
-          type: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-        });
-        setFormData({ name: '', email: '', subject: '', msg: '' });
-        setTimeout(() => setAlert({ show: false, message: '', type: '' }), 5000);
-      } else {
-        throw new Error('Gửi tin nhắn thất bại.');
-      }
+      setFormData({ name: '', email: '', subject: '', msg: '' });
+      setTimeout(() => setAlert({ show: false, message: '', type: '' }), 5000);
     } catch (error) {
       setAlert({
         show: true,
-        message: 'Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.',
+        message: error instanceof Error ? error.message : 'Đã xảy ra lỗi khi gửi tin nhắn. Vui lòng thử lại sau.',
         type: 'bg-red-500/10 text-red-400 border-red-500/20',
       });
     } finally {

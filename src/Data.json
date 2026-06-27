@@ -5,7 +5,7 @@
       "imgLink": "/images/section/av2.jpg",
       "title": "Đỗ Trọng Tấn",
       "subTitle": "",
-      "designation": "Fullstack Developer"
+      "designation": "Tư vấn & Triển khai Web · E-commerce"
     },
     "homeTwoHero": {
       "imgAuthor": "/images/section/hero-img.jpg",
@@ -29,9 +29,9 @@
   "aboutData": {
     "imgLink": "/images/section/ava1.jpg",
     "cvPdf": "/images/Resume.pdf",
-    "title": "Xin chào! Tôi là Đỗ Trọng Tấn",
-    "subtitle": "Fullstack Developer",
-    "text": "Technical Lead với hơn 3 năm kinh nghiệm chuyên sâu về phát triển hệ thống Web quy mô lớn. Chuyên gia trong lĩnh vực E-commerce và ERP, có kinh nghiệm thực chiến tích hợp các nền tảng đa quốc gia và nội địa như SAP B1, Shopify, Haravan, Nhanh.vn. Thành thạo xây dựng kiến trúc hệ thống hiệu suất cao sử dụng các công nghệ hiện đại.",
+    "title": "Đối tác công nghệ cho doanh nghiệp",
+    "subtitle": "Fullstack · E-commerce · Tích hợp & Tự động hóa",
+    "text": "Tôi là chuyên gia phát triển web và hệ thống thương mại điện tử với hơn 3 năm triển khai thực chiến cho doanh nghiệp trong và ngoài nước. Thay vì chỉ viết code, tôi tập trung vào giải pháp tạo doanh thu và vận hành ổn định: website chuyên nghiệp, cửa hàng online Shopify/Haravan/WordPress, đồng bộ Nhanh.vn–SAP–ERP, POS bán lẻ và tự động hóa quy trình. Mỗi dự án đều có mục tiêu rõ ràng, timeline minh bạch và cam kết chất lượng bàn giao.",
     "details": [
       {
         "title": "Điện thoại",
@@ -42,8 +42,8 @@
         "info": "dotrongtan113@gmail.com"
       },
       {
-        "title": "Học vấn",
-        "info": "ĐH Kỹ thuật Công nghiệp Thái Nguyên"
+        "title": "Phạm vi hợp tác",
+        "info": "Website · E-commerce · Tích hợp API · POS / ERP"
       }
     ]
   },
@@ -51,19 +51,11 @@
     "services": [
       {
         "imgLink": "./images/icon/icon1.png",
-        "title": "Phát triển Frontend",
-        "text": "Phát triển giao diện người dùng với VueJS, ReactJS, Nuxt 3, Next.js. Chuyển đổi thiết kế Figma/Zeplin thành code, tối ưu SEO và Web Accessibility.",
+        "title": "Thiết kế website chuyên nghiệp",
+        "text": "Thiết kế và phát triển website hiện đại với VueJS, ReactJS, Nuxt 3, Next.js, WordPress, Haravan, Shopify. Chuyển đổi thiết kế Figma/Zeplin thành giao diện responsive, tối ưu SEO và trải nghiệm người dùng.",
         "effect": "zoom-out-up",
         "duration": "500",
         "delay": "200"
-      },
-      {
-        "imgLink": "./images/icon/icon2.png",
-        "title": "Phát triển Backend",
-        "text": "Xây dựng hệ thống backend với Node.js (Express, NestJS), PHP (Laravel). Thiết kế RESTful API, microservices, xác thực JWT/OAuth2.",
-        "effect": "zoom-out-up",
-        "duration": "500",
-        "delay": "300"
       },
       {
         "imgLink": "./images/icon/icon3.png",
@@ -71,23 +63,7 @@
         "text": "Triển khai giải pháp thương mại điện tử trên Shopify, Haravan, MedusaJS, WordPress/WooCommerce. Tích hợp thanh toán VNPAY, vận chuyển GHTK.",
         "effect": "zoom-out-up",
         "duration": "500",
-        "delay": "400"
-      },
-      {
-        "imgLink": "./images/icon/icon4.png",
-        "title": "Cơ sở dữ liệu & Tối ưu hóa",
-        "text": "Quản lý và tối ưu hóa cơ sở dữ liệu MySQL, MongoDB, SQL Server. Query optimization, indexing, data modeling, caching với Redis.",
-        "effect": "zoom-out-up",
-        "duration": "500",
-        "delay": "500"
-      },
-      {
-        "imgLink": "./images/icon/icon5.png",
-        "title": "DevOps & Triển khai",
-        "text": "Triển khai hệ thống với Docker, CI/CD (GitHub Actions). Quản lý server Linux/Ubuntu, hosting trên aaPanel, cPanel, AWS EC2.",
-        "effect": "zoom-out-up",
-        "duration": "500",
-        "delay": "600"
+        "delay": "300"
       },
       {
         "imgLink": "./images/icon/icon6.png",
@@ -95,13 +71,21 @@
         "text": "Xây dựng workflow tự động hóa với n8n. Tích hợp SAP B1, đồng bộ dữ liệu giữa các nền tảng, ETL process, data transformation.",
         "effect": "zoom-out-up",
         "duration": "500",
-        "delay": "700"
+        "delay": "400"
+      },
+      {
+        "imgLink": "./images/icon/icon2.png",
+        "title": "Web quản lý cho doanh nghiệp",
+        "text": "Phát triển hệ thống quản lý nội bộ: ERP, POS, tồn kho, mua sắm tập trung. Tích hợp SAP B1, tối ưu quy trình vận hành và báo cáo real-time.",
+        "effect": "zoom-out-up",
+        "duration": "500",
+        "delay": "500"
       }
     ]
   },
   "skillData": {
-    "title": "Các kỹ năng chuyên môn mà tôi sở hữu trong lĩnh vực phát triển phần mềm.",
-    "text": "Với hơn 3 năm kinh nghiệm, tôi đã làm chủ nhiều công nghệ và framework hiện đại. Từ frontend đến backend, từ database đến DevOps, tôi luôn nỗ lực nâng cao kỹ năng để xây dựng các hệ thống chất lượng cao, hiệu suất tốt và dễ bảo trì.",
+    "title": "Năng lực kỹ thuật — cam kết chất lượng từng dự án",
+    "text": "Stack hiện đại, quy trình rõ ràng và bàn giao đúng tiến độ. Phù hợp doanh nghiệp cần đối tác triển khai website, e-commerce và hệ thống vận hành ổn định.",
     "skills": [
       {
         "title": "VueJS / Nuxt",
@@ -152,6 +136,8 @@
       {
         "title": "Hệ thống POS Bán lẻ",
         "subTitle": "Bán lẻ / POS",
+        "category": "system",
+        "tags": ["Bán lẻ", "POS"],
         "description": "Phát triển hệ thống POS bán lẻ multi-store, tích hợp hardware (thermal printer, barcode scanner, touchscreen), custom driver SDK.\n\nKết quả: Đạt 99.8% uptime cho 25+ điểm bán, xử lý 5K transactions/ngày.",
         "productLink": "#",
         "effect": "fade-up",
@@ -161,6 +147,8 @@
       {
         "title": "E-commerce MedusaJS",
         "subTitle": "E-commerce / VNPAY / GHTK",
+        "category": "ecommerce",
+        "tags": ["E-commerce", "VNPAY", "GHTK"],
         "description": "Thiết kế E-commerce headless trên MedusaJS + Next.js, tích hợp VNPAY (QR/ATM), GHTK API (real-time tracking).\n\nKết quả: Tối ưu LCP xuống 1.5s (Google PageSpeed 95+), tăng conversion rate 25%.",
         "productLink": "#",
         "effect": "fade-up",
@@ -170,6 +158,8 @@
       {
         "title": "Đồng bộ Nhanh.vn → Shopify",
         "subTitle": "Tích hợp / Tự động hóa",
+        "category": "integration",
+        "tags": ["Tích hợp", "Tự động hóa", "Nhanh.vn", "Shopify"],
         "description": "Giải pháp tự động hóa đồng bộ dữ liệu sản phẩm, tồn kho và đơn hàng giữa nền tảng Nhanh.vn và Shopify. Xử lý webhook real-time, conflict resolution, retry mechanism.",
         "productLink": "#",
         "effect": "fade-up",
@@ -179,6 +169,8 @@
       {
         "title": "WordPress E-commerce",
         "subTitle": "WordPress / WooCommerce",
+        "category": "ecommerce",
+        "tags": ["WordPress", "WooCommerce"],
         "description": "Xây dựng trang thương mại điện tử chuyên nghiệp trên nền tảng WordPress và WooCommerce. Tối ưu SEO, tích hợp cổng thanh toán và vận chuyển nội địa.",
         "productLink": "#",
         "effect": "fade-up",
@@ -188,6 +180,8 @@
       {
         "title": "Shopify Custom Theme & App",
         "subTitle": "Shopify / Liquid / App Integration",
+        "category": "ecommerce",
+        "tags": ["Shopify", "Liquid", "App Integration"],
         "description": "Phát triển theme Shopify custom từ Figma, tối ưu UX/UI và tốc độ tải trang. Xây dựng logic dynamic bằng Liquid, tích hợp Shopify App (Klaviyo, Judge.me, Shopify Flow) và custom API.\n\nKết quả: Tăng tốc độ tải trang 40%, cải thiện SEO (PageSpeed 90+), tăng conversion rate 20%.",
         "productLink": "#",
         "effect": "fade-up",
@@ -197,11 +191,112 @@
       {
         "title": "Haravan E-commerce Customization",
         "subTitle": "Haravan / Liquid / Frontend",
+        "category": "ecommerce",
+        "tags": ["Haravan", "Liquid", "Frontend"],
         "description": "Tùy chỉnh giao diện và logic bán hàng trên Haravan bằng Liquid, xây dựng các module như combo sản phẩm, flash sale, và upsell/cross-sell.\n\nKết quả: Tăng AOV (Average Order Value) 18%, cải thiện trải nghiệm người dùng trên mobile.",
         "productLink": "#",
         "effect": "fade-up",
         "duration": "500",
         "delay": "1000"
+      },
+      {
+        "title": "[Nexttax] Thiết kế Website",
+        "subTitle": "Thiết kế website / Landing page",
+        "category": "web",
+        "tags": ["Thiết kế website", "Landing page", "UI/UX"],
+        "description": "Thiết kế và phát triển website giới thiệu Nexttax — giao diện hiện đại, tối ưu trải nghiệm người dùng và responsive trên mọi thiết bị.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "300"
+      },
+      {
+        "title": "Zenkabel.de — Website Doanh nghiệp",
+        "subTitle": "Thiết kế website / Corporate",
+        "category": "web",
+        "tags": ["Thiết kế website", "Corporate", "Đa ngôn ngữ"],
+        "description": "Thiết kế website doanh nghiệp cho Zenkabel (Đức) — bố cục chuyên nghiệp, đa ngôn ngữ, tối ưu hiển thị sản phẩm và thông tin công ty. Hoàn thành 06/2026.",
+        "productLink": "https://zenkabel.de/",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "350"
+      },
+      {
+        "title": "Viglacerahalong — Website Giới thiệu",
+        "subTitle": "Thiết kế website / Giới thiệu thương hiệu",
+        "category": "web",
+        "tags": ["Thiết kế website", "Giới thiệu thương hiệu", "Frontend"],
+        "description": "Thiết kế website giới thiệu thương hiệu Viglacerahalong — trình bày sản phẩm, hình ảnh dự án và thông tin liên hệ rõ ràng. Hoàn thành 06/2026.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "400"
+      },
+      {
+        "title": "Phòng khám Thẩm mỹ — Website",
+        "subTitle": "Thiết kế website / Y tế thẩm mỹ",
+        "category": "web",
+        "tags": ["Thiết kế website", "Y tế", "Landing page"],
+        "description": "Thiết kế website cho phòng khám thẩm mỹ — giao diện tin cậy, dễ đặt lịch, trình bày dịch vụ và đội ngũ bác sĩ chuyên nghiệp. Hoàn thành 06/2026.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "450"
+      },
+      {
+        "title": "Website Giới thiệu 360VR",
+        "subTitle": "Thiết kế website / 360 VR",
+        "category": "web",
+        "tags": ["Thiết kế website", "360 VR", "Interactive"],
+        "description": "Xây dựng website giới thiệu trải nghiệm 360VR — tích hợp tour ảo panorama, giao diện tương tác và tối ưu tải media. Hoàn thành 06/2026.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "500"
+      },
+      {
+        "title": "[Brossdoor.vn] Xây dựng Website",
+        "subTitle": "Thiết kế website / Doanh nghiệp",
+        "category": "web",
+        "tags": ["Thiết kế website", "WordPress", "Doanh nghiệp"],
+        "description": "Xây dựng website brossdoor.vn — thiết kế giao diện, cấu trúc nội dung và triển khai website giới thiệu sản phẩm cửa cuốn Brossdoor.",
+        "productLink": "https://brossdoor.vn/",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "550"
+      },
+      {
+        "title": "HTU Gasket — Website từ Template",
+        "subTitle": "Thiết kế website / Template customization",
+        "category": "web",
+        "tags": ["Thiết kế website", "Template", "CMS"],
+        "description": "Dựng website HTU Gasket từ template khách hàng đã mua — tùy chỉnh giao diện, chỉnh sửa nội dung, cấu hình và triển khai lên hosting.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "600"
+      },
+      {
+        "title": "[SAG] Đồng bộ tồn kho Nhanh vs Shopify",
+        "subTitle": "Tích hợp / Tự động hóa / Nhanh.vn / Shopify",
+        "category": "integration",
+        "tags": ["Nhanh.vn", "Shopify", "Tồn kho", "Tự động hóa", "Tích hợp"],
+        "description": "Giải pháp đồng bộ tồn kho real-time giữa hệ thống Nhanh.vn và Shopify cho SAG — đảm bảo số lượng sản phẩm luôn khớp giữa hai nền tảng, giảm sai lệch và thao tác thủ công.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "650"
+      },
+      {
+        "title": "[MTLS] Xử lý luồng tự động Haravan",
+        "subTitle": "Tích hợp / Tự động hóa / Haravan",
+        "category": "integration",
+        "tags": ["Haravan", "Tự động hóa", "Webhook", "Tag automation"],
+        "description": "Xây dựng luồng tự động xử lý gắn/gỡ tag trên Haravan cho MTLS — trigger theo điều kiện đơn hàng/sản phẩm, giảm thao tác thủ công và tăng độ chính xác vận hành.",
+        "productLink": "#",
+        "effect": "fade-up",
+        "duration": "500",
+        "delay": "700"
       }
  
     ]
@@ -363,10 +458,24 @@
     ]
   },
   "contactData": {
-    "formTitle": "Liên hệ với tôi",
-    "title": "Thông tin Liên hệ",
-    "subTitle": "Kết nối qua mạng xã hội",
-    "text": "Nếu bạn có dự án cần triển khai hoặc muốn hợp tác, đừng ngần ngại liên hệ với tôi. Tôi luôn sẵn sàng trao đổi và tư vấn giải pháp kỹ thuật phù hợp."
+    "formTitle": "Bắt đầu hợp tác",
+    "title": "Liên hệ trao đổi dự án",
+    "subTitle": "Sẵn sàng tư vấn giải pháp miễn phí",
+    "text": "Bạn đang cần website, cửa hàng online, tích hợp hệ thống hay tự động hóa quy trình? Hãy gửi yêu cầu — tôi sẽ phản hồi trong 24h với phương án kỹ thuật và timeline sơ bộ phù hợp ngân sách của bạn.",
+    "floating": {
+      "panelTitle": "Liên hệ nhanh",
+      "responseNote": "Phản hồi trong vòng 24 giờ",
+      "phone": "0969846563",
+      "phoneDisplay": "0969 846 563",
+      "email": "dotrongtan113@gmail.com",
+      "zaloUrl": "https://zalo.me/84969846563",
+      "facebookUrl": "https://www.facebook.com/",
+      "workingHours": "8:00 – 22:00 (T2–T7)",
+      "ctaLabel": "Gửi yêu cầu dự án →",
+      "showZalo": true,
+      "showFacebook": true,
+      "showEmail": true
+    }
   },
   "socialData": [
     {
@@ -393,5 +502,17 @@
       "icon": "envelope",
       "link": "mailto:dotrongtan113@gmail.com"
     }
-  ]
+  ],
+  "seoData": {
+    "siteName": "TANDEV",
+    "title": "Đỗ Trọng Tấn — Tư vấn & Triển khai Web · E-commerce",
+    "description": "Đồng hành cùng doanh nghiệp từ ý tưởng đến sản phẩm hoàn thiện — website, thương mại điện tử, tích hợp đa nền tảng và tự động hóa vận hành. Giải pháp ổn định, đo lường được kết quả.",
+    "keywords": "tư vấn web, thiết kế website, e-commerce, Shopify, Haravan, WordPress, tích hợp API, POS, ERP, Đỗ Trọng Tấn",
+    "ogImage": "/images/hero-bg3.jpg",
+    "ogImageAlt": "Đỗ Trọng Tấn — Tư vấn & Triển khai Web · E-commerce",
+    "twitterHandle": "",
+    "locale": "vi_VN",
+    "themeColor": "#f97316",
+    "author": "Đỗ Trọng Tấn"
+  }
 }
