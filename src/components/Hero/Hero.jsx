@@ -9,20 +9,24 @@ const Hero = ({ data }) => {
   const containerRef = useHeroEntrance();
   
   useEffect(() => {
+    const textToType = (designation || 'Tư vấn & Triển khai Web · E-commerce').normalize('NFC');
+    const chars = [...textToType];
     let index = 0;
-    const textToType = designation || 'Tư vấn & Triển khai Web · E-commerce';
+    setTypedText('');
+
     const timer = setInterval(() => {
-      setTypedText((prev) => prev + textToType.charAt(index));
-      index++;
-      if (index >= textToType.length) {
+      index += 1;
+      setTypedText(chars.slice(0, index).join(''));
+      if (index >= chars.length) {
         clearInterval(timer);
       }
     }, 100);
+
     return () => clearInterval(timer);
   }, [designation]);
 
   return (
-    <section ref={containerRef} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent text-text-primary px-4 py-20 z-10">
+    <section ref={containerRef} id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent text-text-primary px-4 pt-28 md:pt-32 pb-20 z-10">
       {/* Background Blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="hero-blob absolute w-[500px] h-[500px] rounded-full bg-primary/20 blur-[80px] md:blur-[120px] top-[-100px] left-[-100px] animate-float-1" />
