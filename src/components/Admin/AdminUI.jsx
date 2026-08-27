@@ -26,7 +26,7 @@ export function FormField({ label, ...props }) {
     <div>
       <label className="block text-sm font-medium mb-1.5 text-text-secondary">{label}</label>
       <input
-        className="w-full px-4 py-2.5 rounded-xl bg-bg-deep/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
+        className="w-full px-4 py-2.5 rounded-xl bg-bg-deep/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm text-text-primary"
         {...props}
       />
     </div>
@@ -39,7 +39,7 @@ export function FormTextarea({ label, rows = 4, ...props }) {
       <label className="block text-sm font-medium mb-1.5 text-text-secondary">{label}</label>
       <textarea
         rows={rows}
-        className="w-full px-4 py-2.5 rounded-xl bg-bg-deep/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm resize-y"
+        className="w-full px-4 py-2.5 rounded-xl bg-bg-deep/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm text-text-primary resize-y"
         {...props}
       />
     </div>

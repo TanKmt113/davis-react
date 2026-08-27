@@ -15,7 +15,7 @@ function getImageFromClipboard(clipboardData) {
   return null;
 }
 
-export default function ImageUpload({ value, onChange }) {
+export default function ImageUpload({ value, onChange, label = 'Ảnh dự án' }) {
   const inputRef = useRef(null);
   const pasteZoneRef = useRef(null);
   const [uploading, setUploading] = useState(false);
@@ -62,7 +62,7 @@ export default function ImageUpload({ value, onChange }) {
 
   return (
     <div>
-      <label className="block text-sm font-medium mb-1.5">Ảnh dự án</label>
+      <label className="block text-sm font-medium mb-1.5">{label}</label>
 
       {value ? (
         <div className="relative mb-3 inline-block">
@@ -125,7 +125,7 @@ export default function ImageUpload({ value, onChange }) {
         onChange={(e) => onChange(e.target.value)}
         onPaste={handlePaste}
         placeholder="Hoặc dán URL ảnh..."
-        className="w-full mt-3 px-4 py-2.5 rounded-xl bg-surface/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm"
+        className="w-full mt-3 px-4 py-2.5 rounded-xl bg-bg-deep/50 border border-white/10 focus:border-primary/50 focus:outline-none text-sm text-text-primary"
       />
 
       {error && <p className="text-sm text-red-400 mt-2">{error}</p>}
@@ -136,4 +136,5 @@ export default function ImageUpload({ value, onChange }) {
 ImageUpload.propTypes = {
   value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  label: PropTypes.string,
 };

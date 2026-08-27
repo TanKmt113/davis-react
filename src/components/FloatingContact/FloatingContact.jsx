@@ -41,14 +41,14 @@ export default function FloatingContact() {
   return (
     <div className="fixed bottom-6 right-4 sm:right-6 z-[100] flex flex-col items-end gap-3 pointer-events-none">
       {open && (
-        <div className="pointer-events-auto w-[280px] sm:w-[300px] rounded-2xl border border-white/10 bg-surface/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] p-4 animate-[fadeInUp_0.25s_ease-out]">
+        <div className="pointer-events-auto w-[280px] sm:w-[300px] rounded-2xl border border-border-slate bg-white/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(249,115,22,0.15)] p-4 animate-[fadeInUp_0.25s_ease-out]">
           <p className="text-sm font-semibold text-text-primary mb-1">{contact.panelTitle}</p>
           <p className="text-xs text-text-secondary mb-4">{contact.responseNote}</p>
 
           <div className="space-y-3">
             <a
               href={`tel:${contact.phone}`}
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-white/5 border border-white/10 hover:border-primary/40 transition-colors"
+              className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-primary/5 border border-border-slate hover:border-primary/40 transition-colors"
             >
               <span className="w-9 h-9 rounded-full bg-primary/15 flex items-center justify-center text-primary shrink-0">
                 <Icon icon="material-symbols:call-outline" className="text-lg" />
@@ -61,7 +61,7 @@ export default function FloatingContact() {
 
             <a
               href={`mailto:${contact.email}`}
-              className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-white/5 border border-white/10 hover:border-primary/40 transition-colors"
+              className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-primary/5 border border-border-slate hover:border-primary/40 transition-colors"
             >
               <span className="w-9 h-9 rounded-full bg-orange-500/15 flex items-center justify-center text-orange-400 shrink-0">
                 <Icon icon="material-symbols:mail-outline" className="text-lg" />
@@ -72,7 +72,7 @@ export default function FloatingContact() {
               </span>
             </a>
 
-            <div className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-white/5 border border-white/10">
+            <div className="flex items-center gap-3 rounded-xl px-3 py-2.5 bg-primary/5 border border-border-slate">
               <span className="w-9 h-9 rounded-full bg-emerald-500/15 flex items-center justify-center text-emerald-400 shrink-0">
                 <Icon icon="material-symbols:schedule-outline" className="text-lg" />
               </span>

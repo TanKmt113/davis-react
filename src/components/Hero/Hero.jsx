@@ -67,7 +67,7 @@ const Hero = ({ data }) => {
               to="portfolio" 
               smooth={true} 
               duration={500} 
-              className="hero-cta hero-reveal bg-gradient-to-r from-accent-purple to-primary text-text-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] flex items-center gap-2 group cursor-pointer"
+              className="hero-cta hero-reveal bg-gradient-to-r from-accent-purple to-primary text-stone-900 px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(249,115,22,0.2)] hover:shadow-[0_0_30px_rgba(249,115,22,0.45)] flex items-center gap-2 group cursor-pointer"
             >
               Xem dự án đã triển khai
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>

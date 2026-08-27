@@ -9,6 +9,10 @@
  * @property {string} locale
  * @property {string} themeColor
  * @property {string} author
+ * @property {string} logoUrl
+ * @property {string} logoAlt
+ * @property {string} faviconUrl
+ * @property {boolean} showLogoText
  */
 
 /** @type {SeoConfig} */
@@ -25,4 +29,8 @@ export const DEFAULT_SEO = {
   locale: 'vi_VN',
   themeColor: '#f97316',
   author: 'Đỗ Trọng Tấn',
+  logoUrl: '',
+  logoAlt: 'TANDEV',
+  faviconUrl: '/images/favicon.png',
+  showLogoText: true,
 };

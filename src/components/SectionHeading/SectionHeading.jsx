@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { wowProps } from '../../utils/wowProps';
 
-const SectionHeading = ({ title, subtitle, useAos = true }) => {
-  const aosProps = useAos ? { 'data-aos': 'fade-up', 'data-aos-duration': '800' } : {};
+const SectionHeading = ({ title, subtitle, useWow = true, animation = 'fadeInUp' }) => {
+  const wow = useWow ? wowProps('mb-12 text-center portfolio-heading-inner', animation) : { className: 'mb-12 text-center portfolio-heading-inner' };
 
   return (
-    <header className="mb-12 text-center portfolio-heading-inner" {...aosProps}>
+    <header {...wow}>
       <h2 className="font-headline-lg text-3xl md:text-4xl font-bold tracking-tight text-text-primary mb-3 bg-clip-text text-transparent bg-gradient-to-r from-text-primary via-text-primary to-text-secondary">
         {title}
       </h2>
@@ -21,7 +22,8 @@ const SectionHeading = ({ title, subtitle, useAos = true }) => {
 SectionHeading.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string,
-  useAos: PropTypes.bool,
+  useWow: PropTypes.bool,
+  animation: PropTypes.string,
 };
 
 export default SectionHeading;

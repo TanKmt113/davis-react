@@ -6,25 +6,25 @@ export const PROJECT_CATEGORIES = [
     id: 'ecommerce',
     label: 'E-commerce',
     icon: 'mdi:cart-outline',
-    badgeClass: 'bg-emerald-500/15 text-emerald-400 border-emerald-500/25',
+    badgeClass: 'bg-orange-500/15 text-orange-700 border-orange-400/30',
   },
   {
     id: 'integration',
     label: 'Tích hợp & Tự động hóa',
     icon: 'mdi:sync',
-    badgeClass: 'bg-sky-500/15 text-sky-400 border-sky-500/25',
+    badgeClass: 'bg-amber-500/15 text-amber-800 border-amber-400/30',
   },
   {
     id: 'system',
     label: 'Hệ thống / POS',
     icon: 'mdi:store-outline',
-    badgeClass: 'bg-violet-500/15 text-violet-400 border-violet-500/25',
+    badgeClass: 'bg-orange-600/15 text-orange-800 border-orange-500/30',
   },
   {
     id: 'web',
     label: 'Website / CMS',
     icon: 'mdi:web',
-    badgeClass: 'bg-amber-500/15 text-amber-400 border-amber-500/25',
+    badgeClass: 'bg-[#ffedd5] text-orange-800 border-orange-300/50',
   },
 ];
 

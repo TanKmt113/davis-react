@@ -15,7 +15,7 @@ export default function AdminLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-[#060b18] text-text-primary flex">
+    <div data-admin="true" className="min-h-screen bg-[#060b18] text-text-primary flex">
       <AdminSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
 
       <div className="flex-1 flex flex-col min-w-0">

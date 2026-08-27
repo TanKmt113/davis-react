@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import About from '../components/About/About';
 import Iconbox from '../components/Iconbox/Iconbox';
 import Skill from '../components/Skill/Skill';
@@ -5,9 +6,16 @@ import Contact from "../components/Contact/Contact";
 import PortfolioSection from '../components/Protfolio/PortfolioSection';
 import Hero from '../components/Hero/Hero';
 import { useSiteData } from '../hooks/useSiteData';
+import { syncWow } from '../hooks/useWow';
 
 const Home = () => {
   const { data, loading } = useSiteData();
+
+  useEffect(() => {
+    if (!loading && data) {
+      syncWow();
+    }
+  }, [loading, data]);
 
   if (loading || !data) {
     return (
@@ -20,11 +28,11 @@ const Home = () => {
   return (
     <>
       <Hero data={data.hero} socialData={data.social} />
-      <About data={data.about} data-aos="fade-right" />
-      <Skill data={data.skills} data-aos="fade-right" />
-      <Iconbox data={{ services: data.services }} data-aos="fade-right" />
-      <PortfolioSection portfolioItems={data.projects} isLoading={false} data-aos="fade-right" />
-      <Contact data={data.contact} socialData={data.social} data-aos="fade-right" />
+      <About data={data.about} />
+      <Skill data={data.skills} />
+      <Iconbox data={{ services: data.services }} />
+      <PortfolioSection portfolioItems={data.projects} isLoading={false} />
+      <Contact data={data.contact} socialData={data.social} />
     </>
   );
 };

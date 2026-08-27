@@ -1,13 +1,17 @@
 import { Icon } from '@iconify/react';
+import SiteLogo from '../SiteLogo/SiteLogo';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="w-full py-12 bg-transparent border-t border-white/5 relative z-10">
+    <footer className="w-full py-12 bg-transparent border-t border-border-slate relative z-10">
       <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
-          <div className="text-lg font-bold text-text-primary tracking-tight">TANDEV</div>
+          <SiteLogo
+            textClassName="text-lg font-bold text-text-primary tracking-tight"
+            imageClassName="h-10 md:h-11 w-auto max-w-[220px] object-contain"
+          />
           <p className="text-xs text-text-secondary mt-1 font-medium">
             © {currentYear} Đỗ Trọng Tấn — Senior Full Stack Developer. Built with precision.
           </p>

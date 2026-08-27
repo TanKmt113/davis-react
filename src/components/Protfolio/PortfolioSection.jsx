@@ -3,7 +3,8 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 import { useEffect, useMemo, useState } from 'react';
 import { Icon } from '@iconify/react';
 import { PROJECT_CATEGORIES, resolveProjectMeta } from '../../constants/projectCategories';
-import { usePortfolioReveal } from '../../hooks/usePortfolioReveal';
+import { syncWow } from '../../hooks/useWow';
+import { wowProps } from '../../utils/wowProps';
 
 const FALLBACK_IMAGES = [
   'https://lh3.googleusercontent.com/aida-public/AB6AXuDQzi7yqOPjO83tXhmVb1EWJ1fSIdUIi-X3Vv8gTXS0zfBU1YQj9ZhzD5LreJqOrV7uY0xirxskzPWu3o2E5LUCRAaqAacQqh6qpsCMU9umHIKzrF52wzAqbc4Mb2r74m_UtB2JzGNp9IyLgzh5f0R5QBEZcdrgaGMJP4gRzMCZK0EPEj9hCQ-LYZo1g3IDjDkMTJTCUe7BSvVr688Es3PmxrRljkQ4FoCYkf_QMGjHRpmhHT6rmAUn-8NASyhlwey1wkTrGg6pUxp0',
@@ -17,7 +18,7 @@ const FALLBACK_IMAGES = [
 function CategoryFilter({ active, onChange, counts }) {
   return (
     <nav className="mt-8 w-full portfolio-filters" aria-label="Lọc dự án theo danh mục">
-      <div className="portfolio-filters-inner mx-auto flex max-w-full flex-wrap items-center justify-center gap-2">
+      <div {...wowProps('portfolio-filters-inner mx-auto flex max-w-full flex-wrap items-center justify-center gap-2', 'fadeInUp', { delay: 200 })}>
         <FilterPill
           active={active === 'all'}
           onClick={() => onChange('all')}
@@ -51,16 +52,16 @@ function FilterPill({ label, icon, count, active, onClick, badgeClass }) {
     <button
       type="button"
       onClick={onClick}
-      className={`portfolio-filter-btn inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium border transition-all ${
+      className={`portfolio-filter-btn inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs font-semibold border transition-all duration-300 ${
         active
-          ? 'border-primary/50 bg-primary/15 text-white shadow-[0_0_20px_rgba(59,130,246,0.15)]'
-          : 'border-white/10 bg-surface/30 text-text-secondary hover:border-white/25 hover:text-text-primary'
+          ? 'border-primary/40 bg-gradient-to-r from-accent-purple to-primary text-stone-900 shadow-[0_8px_24px_rgba(249,115,22,0.25)] scale-105'
+          : 'border-border-slate bg-white text-text-secondary hover:border-primary/35 hover:text-primary hover:shadow-[0_4px_16px_rgba(249,115,22,0.1)]'
       }`}
     >
       {icon && <Icon icon={icon} className="text-sm" />}
       <span>{label}</span>
       {count > 0 && (
-        <span className={`ml-0.5 px-1.5 py-0.5 rounded-full text-[10px] ${active ? 'bg-white/15' : badgeClass ?? 'bg-white/5'}`}>
+        <span className={`ml-0.5 px-1.5 py-0.5 rounded-full text-[10px] ${active ? 'bg-white/80 text-orange-800' : badgeClass ?? 'bg-orange-50 text-orange-700'}`}>
           {count}
         </span>
       )}
@@ -95,7 +96,7 @@ function ProjectDetailModal({ item, onClose }) {
       onClick={onClose}
     >
       <div
-        className="w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl border border-white/10 bg-surface p-6 max-h-[85vh] overflow-y-auto"
+        className="w-full sm:max-w-lg rounded-t-2xl sm:rounded-2xl border border-border-slate bg-surface p-6 max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-4 mb-4">
@@ -113,7 +114,7 @@ function ProjectDetailModal({ item, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-text-secondary hover:text-text-primary"
+            className="shrink-0 w-9 h-9 rounded-full border border-border-slate flex items-center justify-center text-text-secondary hover:text-text-primary"
             aria-label="Đóng"
           >
             <Icon icon="material-symbols:close-rounded" className="text-xl" />
@@ -149,7 +150,7 @@ function ProjectDetailModal({ item, onClose }) {
               href={item.productLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white text-xs uppercase font-bold tracking-wider"
+              className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-accent-purple to-primary text-stone-900 text-xs uppercase font-bold tracking-wider"
             >
               <Icon icon="material-symbols:visibility-outline" className="mr-1.5 text-base" />
               Xem demo
@@ -158,7 +159,7 @@ function ProjectDetailModal({ item, onClose }) {
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex items-center px-4 py-2 rounded-full border border-white/10 text-text-secondary hover:text-primary text-xs uppercase font-bold tracking-wider"
+            className="inline-flex items-center px-4 py-2 rounded-full border border-border-slate text-text-secondary hover:text-primary text-xs uppercase font-bold tracking-wider"
           >
             Đóng
           </button>
@@ -177,8 +178,9 @@ function isMobileViewport() {
   return window.matchMedia('(max-width: 767px)').matches;
 }
 
-function ProjectCard({ item }) {
+function ProjectCard({ item, index, featured = false }) {
   const [showDetail, setShowDetail] = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
 
   const openDetail = (event) => {
     event?.stopPropagation();
@@ -195,74 +197,90 @@ function ProjectCard({ item }) {
     <>
       <article
         onClick={handleCardClick}
-        className="portfolio-card w-full glass-card rounded-2xl overflow-hidden border border-white/5 bg-surface/30 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_16px_32px_rgba(59,130,246,0.12)] relative group h-[360px] max-md:cursor-pointer active:max-md:scale-[0.99]"
+        {...wowProps(
+          `portfolio-card group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border-slate bg-white shadow-[0_8px_30px_rgba(249,115,22,0.06)] transition-all duration-500 hover:-translate-y-2 hover:border-primary/35 hover:shadow-[0_24px_48px_rgba(249,115,22,0.16)] max-md:cursor-pointer active:max-md:scale-[0.99] ${featured ? 'lg:col-span-2' : ''}`,
+          'fadeInUp',
+          { delay: 100 + (index % 6) * 80 },
+        )}
       >
-      <div className="absolute inset-0 bg-bg-surface overflow-hidden">
-        <img
-          alt={item.title}
-          src={item.imgLink}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-bg-deep via-bg-deep/30 to-transparent opacity-90" />
-        <span
-          className={`absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-semibold border backdrop-blur-md ${item.categoryMeta.badgeClass}`}
-        >
-          <Icon icon={item.categoryMeta.icon} className="text-sm" />
-          {item.categoryMeta.label}
-        </span>
-      </div>
+        <div className={`relative overflow-hidden ${featured ? 'aspect-[21/9] sm:aspect-[2.2/1]' : 'aspect-[16/10]'}`}>
+          {!imgLoaded && (
+            <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-orange-50 to-orange-100" />
+          )}
+          <img
+            alt={item.title}
+            src={item.imgLink}
+            className={`h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
+            loading="lazy"
+            onLoad={() => setImgLoaded(true)}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/55 via-stone-900/10 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+          <span
+            className={`absolute left-3 top-3 inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[10px] font-semibold backdrop-blur-md ${item.categoryMeta.badgeClass}`}
+          >
+            <Icon icon={item.categoryMeta.icon} className="text-sm" />
+            {item.categoryMeta.label}
+          </span>
+          <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-1 font-mono text-[10px] font-bold text-orange-700 shadow-sm">
+            {String(index + 1).padStart(2, '0')}
+          </span>
+          {featured && (
+            <span className="absolute bottom-3 left-3 rounded-full bg-gradient-to-r from-accent-purple to-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-stone-900 shadow-md">
+              Dự án nổi bật
+            </span>
+          )}
+        </div>
 
-      <div className="absolute inset-x-0 bottom-0 translate-y-[calc(100%-88px)] md:group-hover:translate-y-0 transition-transform duration-500 ease-out bg-surface/95 backdrop-blur-xl border-t border-white/5 pt-4 pb-5 px-5 z-20 flex flex-col justify-between h-[280px]">
-        <div>
-          <h3 className="font-headline-md text-base md:text-lg text-text-primary font-bold line-clamp-1">
+        <div className="relative flex flex-1 flex-col p-5 md:p-6">
+          <div className="absolute left-5 top-0 h-1 w-12 -translate-y-1/2 rounded-full bg-gradient-to-r from-accent-purple to-primary md:left-6" />
+
+          <h3 className={`font-bold text-text-primary line-clamp-2 ${featured ? 'text-xl md:text-2xl' : 'text-base md:text-lg'}`}>
             {item.title}
           </h3>
-          <div className="flex flex-wrap gap-1.5 mt-2">
-            {item.tags.slice(0, 3).map((tag) => (
+
+          <p className={`mt-2 flex-1 text-text-secondary leading-relaxed ${featured ? 'line-clamp-3 text-sm' : 'line-clamp-2 text-xs md:text-sm'}`}>
+            {item.description}
+          </p>
+
+          <div className="mt-4 flex flex-wrap gap-1.5">
+            {item.tags.slice(0, featured ? 5 : 3).map((tag) => (
               <span
                 key={tag}
-                className="px-2 py-0.5 rounded-md bg-primary/5 text-primary font-mono-label text-[10px] border border-primary/10"
+                className="rounded-full border border-primary/15 bg-orange-50 px-2.5 py-0.5 font-mono-label text-[10px] text-orange-700"
               >
                 {tag}
               </span>
             ))}
           </div>
-        </div>
 
-        <div className="opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 delay-75 mt-3 pt-3 border-t border-white/5">
-          <p className="text-xs text-text-secondary leading-relaxed line-clamp-3 mb-3">
-            {item.description}
-          </p>
-          <div className="flex gap-2">
+          <div className="mt-5 flex flex-wrap gap-2 border-t border-border-slate pt-4">
             {item.productLink && item.productLink !== '#' ? (
               <a
                 href={item.productLink}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
-                className="inline-flex items-center px-3 py-1.5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 text-white text-[10px] uppercase font-bold tracking-wider"
+                className="inline-flex items-center rounded-full bg-gradient-to-r from-accent-purple to-primary px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-stone-900 transition-transform hover:scale-105"
               >
-                <Icon icon="material-symbols:visibility-outline" className="mr-1 text-sm" />
-                Demo
+                <Icon icon="material-symbols:open-in-new-rounded" className="mr-1.5 text-sm" />
+                Xem demo
               </a>
             ) : null}
             <button
               type="button"
               onClick={openDetail}
-              className="inline-flex items-center px-3 py-1.5 rounded-full border border-white/10 text-text-secondary hover:text-primary text-[10px] uppercase font-bold tracking-wider"
+              className="inline-flex items-center rounded-full border border-border-slate px-4 py-2 text-[10px] font-bold uppercase tracking-wider text-text-secondary transition-colors hover:border-primary/40 hover:text-primary"
             >
-              <Icon icon="material-symbols:info-outline" className="mr-1 text-sm" />
+              <Icon icon="material-symbols:arrow-outward-rounded" className="mr-1.5 text-sm" />
               Chi tiết
             </button>
           </div>
-        </div>
 
-        <p className="md:hidden text-[10px] text-primary/80 text-center uppercase tracking-wider font-semibold">
-          Chạm để xem chi tiết
-        </p>
-      </div>
-    </article>
+          <p className="mt-3 text-center text-[10px] font-semibold uppercase tracking-wider text-primary/70 md:hidden">
+            Chạm để xem chi tiết
+          </p>
+        </div>
+      </article>
 
       {showDetail ? <ProjectDetailModal item={item} onClose={() => setShowDetail(false)} /> : null}
     </>
@@ -270,6 +288,8 @@ function ProjectCard({ item }) {
 }
 
 ProjectCard.propTypes = {
+  index: PropTypes.number.isRequired,
+  featured: PropTypes.bool,
   item: PropTypes.shape({
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -314,13 +334,18 @@ const PortfolioSection = ({ portfolioItems, isLoading = false, fetchError = null
     [processedItems, activeCategory],
   );
 
-  const sectionRef = usePortfolioReveal(filteredItems, isLoading);
+  useEffect(() => {
+    if (!isLoading && filteredItems.length > 0) {
+      syncWow();
+    }
+  }, [filteredItems, isLoading]);
 
   return (
-    <section ref={sectionRef} id="portfolio" className="relative py-24 bg-transparent w-full z-10">
+    <section id="portfolio" className="relative py-24 w-full z-10 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0 bg-gradient-to-b from-orange-50/80 via-white to-white" />
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-primary/5 blur-[120px] top-[20%] left-[-10%]" />
-        <div className="absolute w-[500px] h-[500px] rounded-full bg-accent-purple/5 blur-[120px] bottom-[20%] right-[-10%]" />
+        <div className="absolute w-[520px] h-[520px] rounded-full bg-primary/10 blur-[130px] top-[8%] left-[-12%]" />
+        <div className="absolute w-[480px] h-[480px] rounded-full bg-accent-purple/40 blur-[120px] bottom-[5%] right-[-10%]" />
       </div>
 
       <div className="max-w-container-max mx-auto w-full px-6 relative z-10">
@@ -328,7 +353,6 @@ const PortfolioSection = ({ portfolioItems, isLoading = false, fetchError = null
           <SectionHeading
             title="Dự Án Đã Thực Hiện"
             subtitle="Một số dự án website, e-commerce và tích hợp hệ thống đã triển khai cho khách hàng doanh nghiệp."
-            useAos={false}
           />
         </div>
         <CategoryFilter
@@ -343,9 +367,14 @@ const PortfolioSection = ({ portfolioItems, isLoading = false, fetchError = null
               <div className="w-10 h-10 border-2 border-primary/30 border-t-primary rounded-full animate-spin" />
             </div>
           ) : filteredItems.length > 0 ? (
-            <div className="portfolio-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredItems.map((item) => (
-                <ProjectCard key={`${item.title}-${item.category}`} item={item} />
+            <div className="portfolio-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              {filteredItems.map((item, index) => (
+                <ProjectCard
+                  key={`${item.title}-${item.category}`}
+                  item={item}
+                  index={index}
+                  featured={index === 0 && filteredItems.length > 2}
+                />
               ))}
             </div>
           ) : (
@@ -360,7 +389,7 @@ const PortfolioSection = ({ portfolioItems, isLoading = false, fetchError = null
                 <button
                   type="button"
                   onClick={() => setActiveCategory('all')}
-                  className="mt-4 px-4 py-2 rounded-full border border-white/10 text-sm hover:border-primary/40"
+                  className="mt-4 px-4 py-2 rounded-full border border-border-slate text-sm hover:border-primary/40"
                 >
                   Xem tất cả dự án
                 </button>

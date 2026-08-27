@@ -1,4 +1,4 @@
-@import "../../sass/default/variable";
+@use "../../sass/default/variable" as *;
 .st-post-single.st-style1 {
   .st-post-thumb {
     display: block;

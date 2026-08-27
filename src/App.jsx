@@ -1,5 +1,4 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Page404 from './components/404/Page404';
@@ -18,18 +17,18 @@ import AdminLayout from './components/Admin/AdminLayout';
 import ProtectedRoute from './components/Admin/ProtectedRoute';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+import { BrandingProvider } from './context/BrandingContext';
+import { useWow } from './hooks/useWow';
+import 'animate.css/animate.min.css';
 
 function App() {
-  useEffect(() => {
-    Aos.init({ once: true });
-  }, []);
+  useWow();
 
   return (
     <ThemeProvider>
       <AuthProvider>
-        <BrowserRouter>
+        <BrandingProvider>
+          <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
@@ -52,7 +51,8 @@ function App() {
               </Route>
             </Route>
           </Routes>
-        </BrowserRouter>
+          </BrowserRouter>
+        </BrandingProvider>
       </AuthProvider>
     </ThemeProvider>
   );

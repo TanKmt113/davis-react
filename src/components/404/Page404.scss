@@ -1,4 +1,4 @@
-@import "../../sass/default/variable";
+@use "../../sass/default/variable" as *;
 .st-page-not-found {
   height: calc(100vh - 80px);
 

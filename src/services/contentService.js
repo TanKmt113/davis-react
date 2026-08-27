@@ -134,18 +134,10 @@ export async function fetchAboutData() {
 
   return {
     imgLink: content?.imgLink ?? base.imgLink,
-    cvPdf: content?.cvPdf ?? base.cvPdf,
     title: content?.title ?? base.title,
     subtitle: content?.subtitle ?? base.subtitle,
     text: content?.text ?? base.text,
-    details: content?.details ?? base.details,
     tags: content?.tags ?? ['Shopify / Haravan / WordPress', 'Tích hợp Nhanh.vn / SAP', 'Website doanh nghiệp', 'Tự động hóa n8n'],
-    stats: content?.stats ?? [
-      { value: '15+', label: 'Dự án bàn giao', desc: 'Website, e-commerce và tích hợp hệ thống cho doanh nghiệp.' },
-      { value: '99.8%', label: 'Uptime hệ thống', desc: 'Cam kết ổn định cho POS và nền tảng bán hàng multi-store.' },
-      { value: '60%', label: 'Rút ngắn quy trình', desc: 'Tự động hóa giúp giảm thao tác thủ công và sai sót vận hành.' },
-      { value: '95+', label: 'Điểm PageSpeed', desc: 'Tối ưu tốc độ web — tăng trải nghiệm và tỷ lệ chuyển đổi.' },
-    ],
     experienceBadge: content?.experienceBadge ?? { label: 'Kinh nghiệm', value: '3+ Năm triển khai' },
   };
 }
@@ -188,7 +180,15 @@ export async function fetchFloatingContact() {
 export async function fetchSeoData() {
   const content = await fetchSection('seo');
   const base = fallbackData.seoData ?? DEFAULT_SEO;
-  return { ...DEFAULT_SEO, ...base, ...(content ?? {}) };
+  const merged = { ...DEFAULT_SEO, ...base, ...(content ?? {}) };
+
+  return {
+    ...merged,
+    logoUrl: (content?.logoUrl ?? merged.logoUrl ?? '').trim(),
+    logoAlt: content?.logoAlt ?? merged.logoAlt ?? merged.siteName,
+    faviconUrl: (content?.faviconUrl ?? merged.faviconUrl ?? DEFAULT_SEO.faviconUrl).trim(),
+    showLogoText: content?.showLogoText ?? merged.showLogoText ?? true,
+  };
 }
 
 export async function fetchSocialLinks() {

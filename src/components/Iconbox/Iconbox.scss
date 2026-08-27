@@ -1,4 +1,4 @@
-@import "../../sass/default/variable";
+@use "../../sass/default/variable" as *;
 .st-iconbox.st-style1 {
   text-align: center;
   padding: 50px 30px;

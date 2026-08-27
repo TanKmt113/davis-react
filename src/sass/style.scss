@@ -1,5 +1,5 @@
-@import "default/variable";
-@import "default/typography";
-@import "default/spacing";
-@import "default/general";
-@import "../components/Button/Button.scss";
+@use "default/variable";
+@use "default/typography";
+@use "default/spacing";
+@use "default/general";
+@use "../components/Button/Button";

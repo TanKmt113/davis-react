@@ -513,6 +513,10 @@
     "twitterHandle": "",
     "locale": "vi_VN",
     "themeColor": "#f97316",
-    "author": "Đỗ Trọng Tấn"
+    "author": "Đỗ Trọng Tấn",
+    "logoUrl": "",
+    "logoAlt": "TANDEV",
+    "faviconUrl": "/images/favicon.png",
+    "showLogoText": true
   }
 }

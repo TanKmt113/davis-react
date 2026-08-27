@@ -1,4 +1,4 @@
-@import '../../sass/default/variable';
+@use '../../sass/default/variable' as *;
 
 #st-alert {
   font-size: 15px;

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@iconify/react';
 import { sendContactMessage } from '../../services/contactService';
+import { wowProps } from '../../utils/wowProps';
 
 const Contact = ({ data }) => {
   const { title, text } = data;
@@ -62,7 +63,7 @@ const Contact = ({ data }) => {
       </div>
 
       <div className="max-w-container-max mx-auto w-full px-6 relative z-10">
-        <div className="mb-16 text-center lg:text-left">
+        <div {...wowProps('mb-16 text-center lg:text-left', 'fadeInUp')}>
           <h2 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-text-primary tracking-tight mb-4">
             Liên Hệ
           </h2>
@@ -73,7 +74,7 @@ const Contact = ({ data }) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Contact Form Card */}
-          <div className="lg:col-span-8 glass-card rounded-2xl p-8 md:p-12 border border-white/5 bg-surface/30 backdrop-blur-xl hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(77,142,255,0.05)] relative group">
+          <div {...wowProps('lg:col-span-8 glass-card rounded-2xl p-8 md:p-12 border border-border-slate bg-surface/30 backdrop-blur-xl hover:-translate-y-1 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(249,115,22,0.08)] relative group', 'fadeInRight', { delay: 150 })}>
             <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-purple to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             
             {alert.show && (
@@ -88,7 +89,7 @@ const Contact = ({ data }) => {
                 <div className="space-y-2">
                   <label className="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest" htmlFor="name">Họ và tên</label>
                   <input 
-                    className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-white/5 focus:border-primary/50 focus:outline-none transition-colors"
+                    className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-border-slate focus:border-primary/50 focus:outline-none transition-colors"
                     id="name" 
                     name="name"
                     placeholder="Nhập họ và tên của bạn" 
@@ -101,7 +102,7 @@ const Contact = ({ data }) => {
                 <div className="space-y-2">
                   <label className="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest" htmlFor="email">Email</label>
                   <input 
-                    className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-white/5 focus:border-primary/50 focus:outline-none transition-colors"
+                    className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-border-slate focus:border-primary/50 focus:outline-none transition-colors"
                     id="email" 
                     name="email"
                     placeholder="Nhập email của bạn" 
@@ -115,7 +116,7 @@ const Contact = ({ data }) => {
               <div className="space-y-2">
                 <label className="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest" htmlFor="subject">Chủ đề</label>
                 <input 
-                  className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-white/5 focus:border-primary/50 focus:outline-none transition-colors"
+                  className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-border-slate focus:border-primary/50 focus:outline-none transition-colors"
                   id="subject" 
                   name="subject"
                   placeholder="Tiêu đề lời nhắn..." 
@@ -128,7 +129,7 @@ const Contact = ({ data }) => {
               <div className="space-y-2">
                 <label className="font-mono-label text-mono-label text-text-secondary uppercase tracking-widest" htmlFor="msg">Lời nhắn</label>
                 <textarea 
-                  className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-white/5 focus:border-primary/50 focus:outline-none transition-colors resize-none"
+                  className="w-full bg-surface-variant/20 hover:bg-surface-variant/35 text-text-primary placeholder:text-outline-variant/60 rounded-xl px-4 py-3 font-body-base text-body-base border border-border-slate focus:border-primary/50 focus:outline-none transition-colors resize-none"
                   id="msg" 
                   name="msg"
                   placeholder="Chi tiết yêu cầu của bạn..." 
@@ -139,7 +140,7 @@ const Contact = ({ data }) => {
                 />
               </div>
               <button 
-                className="w-full md:w-auto px-8 py-3.5 bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full font-label-caps text-label-caps text-text-primary uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:scale-102 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full md:w-auto px-8 py-3.5 bg-gradient-to-r from-accent-purple to-primary hover:from-white hover:to-orange-500 rounded-full font-label-caps text-label-caps text-stone-900 uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_20px_rgba(249,115,22,0.35)] hover:scale-102 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
                 type="submit"
                 disabled={loading}
               >
@@ -150,8 +151,8 @@ const Contact = ({ data }) => {
           </div>
 
           {/* Contact Info Sidebar */}
-          <div className="lg:col-span-4 flex flex-col gap-6">
-            <div className="glass-card rounded-2xl p-8 border border-white/5 bg-surface/30 backdrop-blur-xl relative group">
+          <div {...wowProps('lg:col-span-4 flex flex-col gap-6', 'fadeInLeft', { delay: 250 })}>
+            <div className="glass-card rounded-2xl p-8 border border-border-slate bg-surface/30 backdrop-blur-xl relative group">
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-purple to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               
               <h3 className="font-headline-md text-headline-md text-text-primary mb-6">{title}</h3>

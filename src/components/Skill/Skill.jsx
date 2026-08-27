@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { Icon } from '@iconify/react';
+import { wowProps } from '../../utils/wowProps';
 
 const Skill = ({ data }) => {
   const { title, text, categories = [] } = data;
@@ -16,10 +17,10 @@ const Skill = ({ data }) => {
       <div className="max-w-container-max mx-auto w-full px-6 relative z-10">
         <div className="mb-16 text-center">
           <SectionHeading title="Kỹ năng chuyên môn" />
-          <h2 className="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-text-primary mb-4 bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary">
+          <h2 {...wowProps('font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-text-primary mb-4 bg-clip-text text-transparent bg-gradient-to-r from-text-primary to-text-secondary', 'fadeInUp', { delay: 100 })}>
             {title}
           </h2>
-          <p className="font-body-lg text-body-lg text-text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p {...wowProps('font-body-lg text-body-lg text-text-secondary max-w-3xl mx-auto leading-relaxed', 'fadeInUp', { delay: 200 })}>
             {text}
           </p>
         </div>
@@ -27,8 +28,12 @@ const Skill = ({ data }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {categories.map((cat, idx) => (
             <div 
-              key={idx} 
-              className="glass-card rounded-2xl p-8 border border-white/5 bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:-translate-y-2 hover:bg-surface/50 hover:border-primary/20 hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] relative overflow-hidden group h-full flex flex-col"
+              key={idx}
+              {...wowProps(
+                'glass-card rounded-2xl p-8 border border-border-slate bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:-translate-y-2 hover:bg-surface/50 hover:border-primary/20 hover:shadow-[0_20px_40px_rgba(249,115,22,0.15)] relative overflow-hidden group h-full flex flex-col',
+                'fadeInUp',
+                { delay: 200 + idx * 120 },
+              )}
             >
               {/* Top gradient border overlay on card hover */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-accent-purple to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>

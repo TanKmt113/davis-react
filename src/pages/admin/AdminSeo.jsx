@@ -1,4 +1,5 @@
 import { Alert, AdminCard, FormField, FormTextarea, PageHeader, SaveButton } from '../../components/Admin/AdminUI';
+import ImageUpload from '../../components/Admin/ImageUpload';
 import { DEFAULT_SEO } from '../../constants/seoDefaults';
 import { resolveAbsoluteUrl } from '../../lib/seoMeta';
 import { useSectionForm } from '../../hooks/useSectionForm';
@@ -6,6 +7,8 @@ import { useSectionForm } from '../../hooks/useSectionForm';
 export default function AdminSeo() {
   const { form, setField, loading, saving, message, save } = useSectionForm('seo', { ...DEFAULT_SEO });
   const previewImage = resolveAbsoluteUrl(form.ogImage);
+  const previewLogo = resolveAbsoluteUrl(form.logoUrl);
+  const previewFavicon = resolveAbsoluteUrl(form.faviconUrl);
 
   if (loading) {
     return (
@@ -22,6 +25,47 @@ export default function AdminSeo() {
         description="Open Graph (Facebook, Zalo) · Twitter Card · Google"
       />
       <Alert type={message.type} message={message.text} />
+
+      <AdminCard title="Logo & Thương hiệu" className="mb-6">
+        <div className="grid gap-4 max-w-2xl">
+          <ImageUpload
+            label="Logo website (header & footer)"
+            value={form.logoUrl}
+            onChange={(url) => setField('logoUrl', url)}
+          />
+          <FormField
+            label="Mô tả logo (alt)"
+            value={form.logoAlt}
+            onChange={(e) => setField('logoAlt', e.target.value)}
+            placeholder="TANDEV"
+          />
+          <ImageUpload
+            label="Favicon (icon tab trình duyệt)"
+            value={form.faviconUrl}
+            onChange={(url) => setField('faviconUrl', url)}
+          />
+          <p className="text-xs text-text-secondary">
+            Khuyến nghị favicon <strong className="text-text-primary">32×32 px</strong> hoặc <strong className="text-text-primary">64×64 px</strong> (PNG/SVG).
+            Nếu chưa upload logo, header/footer sẽ hiển thị tên website.
+          </p>
+          {(previewLogo || previewFavicon) && (
+            <div className="flex flex-wrap items-end gap-6 rounded-xl border border-white/10 bg-black/20 p-4">
+              {previewLogo && (
+                <div>
+                  <p className="text-xs text-text-secondary mb-2">Logo</p>
+                  <img src={previewLogo} alt={form.logoAlt} className="h-10 w-auto object-contain" />
+                </div>
+              )}
+              {previewFavicon && (
+                <div>
+                  <p className="text-xs text-text-secondary mb-2">Favicon</p>
+                  <img src={previewFavicon} alt="Favicon preview" className="h-8 w-8 object-contain" />
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </AdminCard>
 
       <AdminCard title="Thông tin hiển thị khi share link" className="mb-6">
         <div className="grid gap-4 max-w-2xl">

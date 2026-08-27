@@ -79,6 +79,10 @@ export function applySeoToDocument(seo, siteUrl) {
 
   upsertLink('canonical', pageUrl);
 
+  const faviconUrl = resolveAbsoluteUrl(config.faviconUrl || '/images/favicon.png', baseUrl);
+  upsertLink('icon', faviconUrl);
+  upsertLink('apple-touch-icon', faviconUrl);
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',

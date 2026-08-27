@@ -31,7 +31,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen bg-bg-deep flex items-center justify-center px-6">
+    <div data-admin="true" className="min-h-screen bg-bg-deep flex items-center justify-center px-6">
       <div className="w-full max-w-md glass-card rounded-2xl p-8 border border-white/5 bg-surface/30 backdrop-blur-xl">
         <h1 className="text-2xl font-bold mb-2">Admin Login</h1>
         <p className="text-text-secondary text-sm mb-8">Đăng nhập để quản lý dự án portfolio</p>

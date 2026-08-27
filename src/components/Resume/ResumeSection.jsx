@@ -27,7 +27,7 @@ const ResumeSection = ({ data }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Experience Column */}
           <div>
-            <div className="flex items-center gap-3 mb-10 pb-3 border-b border-white/5">
+            <div className="flex items-center gap-3 mb-10 pb-3 border-b border-border-slate">
               <div className="p-2.5 bg-surface-variant/30 rounded-lg border border-border-slate/50 text-primary flex items-center justify-center">
                 <Icon icon="material-symbols:work-outline-rounded" className="text-2xl" />
               </div>
@@ -38,11 +38,11 @@ const ResumeSection = ({ data }) => {
               {experience.map((exp, index) => (
                 <div key={index} className="relative group">
                   {/* Timeline node marker */}
-                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-surface border-2 border-primary group-hover:bg-primary transition-all duration-300 flex items-center justify-center shadow-[0_0_10px_rgba(59,130,246,0.3)]">
+                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-surface border-2 border-primary group-hover:bg-primary transition-all duration-300 flex items-center justify-center shadow-[0_0_10px_rgba(249,115,22,0.35)]">
                     <div className="w-2.5 h-2.5 rounded-full bg-primary group-hover:bg-surface"></div>
                   </div>
                   
-                  <div className="glass-card p-6 rounded-2xl border border-white/5 bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:bg-surface/50 hover:border-primary/20 hover:shadow-[0_15px_30px_rgba(59,130,246,0.1)]">
+                  <div className="glass-card p-6 rounded-2xl border border-border-slate bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:bg-surface/50 hover:border-primary/20 hover:shadow-[0_15px_30px_rgba(249,115,22,0.12)]">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                       <span className="bg-primary/10 text-primary px-3.5 py-1 rounded-full font-mono-label text-mono-label border border-primary/10">
                         {exp.duration}
@@ -62,7 +62,7 @@ const ResumeSection = ({ data }) => {
 
           {/* Core Competencies (rendered in Education section of schema) */}
           <div>
-            <div className="flex items-center gap-3 mb-10 pb-3 border-b border-white/5">
+            <div className="flex items-center gap-3 mb-10 pb-3 border-b border-border-slate">
               <div className="p-2.5 bg-surface-variant/30 rounded-lg border border-border-slate/50 text-accent-purple flex items-center justify-center">
                 <Icon icon="material-symbols:star-outline" className="text-2xl" />
               </div>
@@ -73,11 +73,11 @@ const ResumeSection = ({ data }) => {
               {education.map((edu, index) => (
                 <div key={index} className="relative group">
                   {/* Timeline node marker */}
-                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-surface border-2 border-accent-purple group-hover:bg-accent-purple transition-all duration-300 flex items-center justify-center shadow-[0_0_10px_rgba(139,92,246,0.3)]">
+                  <div className="absolute -left-[41px] top-1.5 w-6 h-6 rounded-full bg-surface border-2 border-accent-purple group-hover:bg-accent-purple transition-all duration-300 flex items-center justify-center shadow-[0_0_10px_rgba(251,146,60,0.35)]">
                     <div className="w-2.5 h-2.5 rounded-full bg-accent-purple group-hover:bg-surface"></div>
                   </div>
                   
-                  <div className="glass-card p-6 rounded-2xl border border-white/5 bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:bg-surface/50 hover:border-accent-purple/20 hover:shadow-[0_15px_30px_rgba(139,92,246,0.1)]">
+                  <div className="glass-card p-6 rounded-2xl border border-border-slate bg-surface/30 backdrop-blur-xl transition-all duration-400 hover:bg-surface/50 hover:border-accent-purple/20 hover:shadow-[0_15px_30px_rgba(251,146,60,0.12)]">
                     <h3 className="font-headline-md text-headline-md text-text-primary mb-4 tracking-tight">{edu.title}</h3>
                     <div 
                       className="font-body-base text-body-base text-text-secondary leading-relaxed resume-list-container"

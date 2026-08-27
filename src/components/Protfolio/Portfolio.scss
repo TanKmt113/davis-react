@@ -1,4 +1,4 @@
-@import "../../sass/default/variable";
+@use "../../sass/default/variable" as *;
 
 // ========== Grid Card Layout ==========
 .st-portfolio-card {

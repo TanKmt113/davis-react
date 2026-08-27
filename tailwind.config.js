@@ -20,7 +20,7 @@ export default {
         "outline": "var(--border-subtle)",
         
         // Retain legacy container vars mapping just in case
-        "on-primary-container": "#00285d",
+        "on-primary-container": "#7c2d12",
         "surface-container-high": "#222a3d",
         "primary-container": "var(--accent-color)",
         "bg-surface": "var(--bg-card)",
