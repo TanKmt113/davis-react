@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 import CvDocument from '../components/Cv/CvDocument';
 import { useCvSettings } from '../hooks/useCvSettings';
-import { loadCvFont, printCv } from '../lib/printCv';
+import { printCv } from '../lib/printCv';
 import '../components/Cv/Cv.scss';
 
 export default function CvPage() {
@@ -11,7 +11,6 @@ export default function CvPage() {
 
   useEffect(() => {
     document.body.classList.add('cv-print-page');
-    loadCvFont();
     return () => document.body.classList.remove('cv-print-page');
   }, []);
 
@@ -25,9 +24,9 @@ export default function CvPage() {
         <div className="cv-viewer-actions">
           <button
             type="button"
-            onClick={printCv}
+            onClick={() => printCv()}
             className="cv-viewer-btn"
-            title="In / Lưu PDF"
+            title="In / Lưu PDF (giống màn hình)"
           >
             <Icon icon="material-symbols:print-outline" />
           </button>

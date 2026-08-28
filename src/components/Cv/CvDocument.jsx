@@ -41,9 +41,9 @@ CvSection.propTypes = {
 
 function ContactRow({ icon, href, label, external }) {
   const content = (
-  <>
+    <>
       <Icon icon={icon} className="cv-icon" />
-      <span className="cv-break-all">{label}</span>
+      <span>{label}</span>
     </>
   );
 
@@ -99,41 +99,89 @@ export default function CvDocument({ avatarUrl = '' }) {
             <Icon icon="material-symbols:location-on-outline" className="cv-icon" />
             {cvData.location}
           </p>
+          <div className="cv-contact-row">
+            <ContactRow icon="material-symbols:call-outline" href={`tel:${contact.phone}`} label={contact.phone} />
+            <ContactRow icon="material-symbols:mail-outline" href={`mailto:${contact.email}`} label={contact.email} />
+            <ContactRow icon="mdi:linkedin" href={contact.linkedin} label="LinkedIn" external />
+            <ContactRow icon="mdi:github" href={contact.github} label="GitHub" external />
+          </div>
         </div>
       </header>
 
-      <div className="cv-grid">
-        <aside className="cv-sidebar">
-          <CvSection title="Liên hệ" icon="material-symbols:contact-mail-outline">
-            <div className="cv-stack">
-              <ContactRow icon="material-symbols:call-outline" href={`tel:${contact.phone}`} label={contact.phone} />
-              <ContactRow icon="material-symbols:mail-outline" href={`mailto:${contact.email}`} label={contact.email} />
-              <ContactRow icon="mdi:linkedin" href={contact.linkedin} label="LinkedIn" external />
-              <ContactRow icon="mdi:github" href={contact.github} label="GitHub" external />
-            </div>
-          </CvSection>
+      <div className="cv-body">
+        <CvSection title="Tổng quan" icon="material-symbols:person-outline">
+          {cvData.overview.map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="cv-paragraph">{paragraph}</p>
+          ))}
+        </CvSection>
 
-          <CvSection title="Kỹ năng" icon="material-symbols:code-rounded">
-            <div className="cv-stack cv-stack--lg">
-              {cvData.skills.map((group) => (
-                <div key={group.group}>
-                  <h3 className="cv-skill-group">{group.group}</h3>
-                  <div className="cv-tags">
-                    {group.items.map((skill) => (
-                      <span key={skill} className="cv-tag">{skill}</span>
-                    ))}
-                  </div>
+        <CvSection title="Kinh nghiệm" icon="material-symbols:work-outline">
+          {cvData.experiences.map((job) => (
+            <div key={`${job.company}-${job.period}`} className="cv-exp-item">
+              <div className="cv-exp-header">
+                <div>
+                  <h3 className="cv-exp-role">{job.role}</h3>
+                  <p className="cv-exp-company">{job.company}</p>
                 </div>
-              ))}
-            </div>
-          </CvSection>
+                <span className="cv-exp-period">{job.period}</span>
+              </div>
+              <p className="cv-exp-allocation">{job.allocation}</p>
 
+              <div className="cv-subsection">
+                <h4 className="cv-subsection-title">Trách nhiệm chính</h4>
+                {job.leadership.map((block) => (
+                  <div key={block.title} className="cv-block">
+                    <h5 className="cv-block-title">{block.title}</h5>
+                    <BulletList items={block.items} />
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </CvSection>
+
+        <CvSection title="Dự án tiêu biểu" icon="material-symbols:rocket-launch-outline">
+          <div className="cv-projects-list">
+            {cvData.projects.map((project, index) => (
+              <div key={project.name} className="cv-project">
+                <div className="cv-project-head">
+                  <span className="cv-project-index">{String(index + 1).padStart(2, '0')}</span>
+                  <h3 className="cv-project-name">{project.name}</h3>
+                </div>
+                <p className="cv-project-goal">{project.goal}</p>
+                <BulletList items={project.highlights} />
+                <p className="cv-project-meta">
+                  <strong>Công nghệ:</strong> {project.stack}
+                </p>
+                <p className="cv-project-meta">
+                  <strong>Vai trò:</strong> {project.role}
+                </p>
+              </div>
+            ))}
+          </div>
+        </CvSection>
+
+        <CvSection title="Kỹ năng" icon="material-symbols:code-rounded">
+          <div className="cv-skills-grid">
+            {cvData.skills.map((group) => (
+              <div key={group.group} className="cv-skill-block">
+                <h3 className="cv-skill-group">{group.group}</h3>
+                <div className="cv-tags">
+                  {group.items.map((skill) => (
+                    <span key={skill} className="cv-tag">{skill}</span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </CvSection>
+
+        <div className="cv-meta-grid">
           <CvSection title="Học vấn" icon="material-symbols:school-outline">
             <div className="cv-edu-card">
               <p className="cv-edu-school">{cvData.education.school}</p>
               <p className="cv-edu-degree">{cvData.education.degree}</p>
               <p className="cv-edu-meta">{cvData.education.period} · GPA {cvData.education.gpa}</p>
-              <p className="cv-edu-course">{cvData.education.coursework}</p>
             </div>
           </CvSection>
 
@@ -143,66 +191,12 @@ export default function CvDocument({ avatarUrl = '' }) {
               <p className="cv-award-desc">{cvData.award.description}</p>
             </div>
           </CvSection>
-        </aside>
+        </div>
 
-        <main className="cv-main">
-          <CvSection title="Tổng quan" icon="material-symbols:person-outline">
-            {cvData.overview.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="cv-paragraph">{paragraph}</p>
-            ))}
-          </CvSection>
-
-          <CvSection title="Kinh nghiệm" icon="material-symbols:work-outline">
-            <div className="cv-exp-header">
-              <div>
-                <h3 className="cv-exp-role">{cvData.experience.role}</h3>
-                <p className="cv-exp-company">{cvData.experience.company}</p>
-              </div>
-              <span className="cv-exp-period">{cvData.experience.period}</span>
-            </div>
-            <p className="cv-exp-allocation">{cvData.experience.allocation}</p>
-
-            <div className="cv-subsection">
-              <h4 className="cv-subsection-title">Trách nhiệm chính</h4>
-              {cvData.experience.leadership.map((block) => (
-                <div key={block.title} className="cv-block">
-                  <h5 className="cv-block-title">{block.title}</h5>
-                  <BulletList items={block.items} />
-                </div>
-              ))}
-            </div>
-          </CvSection>
-
-          <CvSection title="Dự án tiêu biểu" icon="material-symbols:rocket-launch-outline">
-            <div className="cv-projects-list">
-              {cvData.projects.map((project, index) => (
-                <div key={project.name} className="cv-project">
-                  <div className="cv-project-head">
-                    <span className="cv-project-index">{String(index + 1).padStart(2, '0')}</span>
-                    <h3 className="cv-project-name">{project.name}</h3>
-                  </div>
-                  <p className="cv-project-goal">{project.goal}</p>
-                  <BulletList items={project.highlights} />
-                  <p className="cv-project-meta">
-                    <strong>Công nghệ:</strong> {project.stack}
-                  </p>
-                  <p className="cv-project-meta">
-                    <strong>Vai trò:</strong> {project.role}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </CvSection>
-
-          <CvSection title="Sở thích & Học hỏi" icon="material-symbols:interests-outline">
-            <BulletList items={cvData.interests} />
-          </CvSection>
-
-          <footer className="cv-footer">
-            <span>Cập nhật: {cvData.lastUpdated}</span>
-            <span>Hồ sơ năng lực — Fullstack Developer</span>
-          </footer>
-        </main>
+        <footer className="cv-footer">
+          <span>Cập nhật: {cvData.lastUpdated}</span>
+          <span>Hồ sơ năng lực — Fullstack Developer</span>
+        </footer>
       </div>
     </article>
   );
