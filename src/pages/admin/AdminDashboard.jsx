@@ -8,6 +8,7 @@ const SECTIONS = [
   { to: '/admin/skills', icon: 'material-symbols:psychology-outline', label: 'Kỹ năng', desc: 'Nhóm kỹ năng' },
   { to: '/admin/services', icon: 'material-symbols:design-services-outline', label: 'Dịch vụ', desc: 'Dịch vụ & giải pháp' },
   { to: '/admin/projects', icon: 'material-symbols:work-outline', label: 'Dự án', desc: 'Portfolio dự án' },
+  { to: '/admin/cv', icon: 'material-symbols:badge-outline', label: 'CV', desc: 'Ảnh đại diện trang CV' },
   { to: '/admin/contact', icon: 'material-symbols:mail-outline', label: 'Liên hệ', desc: 'Form liên hệ' },
   { to: '/admin/social', icon: 'material-symbols:share-outline', label: 'Mạng xã hội', desc: 'Social links' },
   { to: '/admin/seo', icon: 'material-symbols:travel-explore-outline', label: 'SEO', desc: 'Open Graph · Twitter · Google' },

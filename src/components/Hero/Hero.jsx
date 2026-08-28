@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
 import { useHeroEntrance } from '../../hooks/useHeroEntrance';
 
@@ -72,10 +73,17 @@ const Hero = ({ data }) => {
               Xem dự án đã triển khai
               <span className="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </ScrollLink>
-            <ScrollLink 
-              to="contact" 
-              smooth={true} 
-              duration={500} 
+            <RouterLink
+              to="/cv"
+              className="hero-cta hero-reveal border border-border-slate hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-text-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 flex items-center gap-2"
+            >
+              Xem CV
+              <span className="material-symbols-outlined text-[18px]">description</span>
+            </RouterLink>
+            <ScrollLink
+              to="contact"
+              smooth
+              duration={500}
               className="hero-cta hero-reveal border border-border-slate hover:border-primary bg-transparent text-primary hover:bg-primary hover:text-text-primary px-8 py-3 rounded-full font-label-caps text-label-caps hover:scale-105 transition-all duration-300 flex items-center gap-2 cursor-pointer"
             >
               Trao đổi dự án

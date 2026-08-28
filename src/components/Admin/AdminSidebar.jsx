@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { to: '/admin/skills', icon: 'material-symbols:psychology-outline', label: 'Kỹ năng' },
   { to: '/admin/services', icon: 'material-symbols:design-services-outline', label: 'Dịch vụ' },
   { to: '/admin/projects', icon: 'material-symbols:work-outline', label: 'Dự án' },
+  { to: '/admin/cv', icon: 'material-symbols:badge-outline', label: 'CV' },
   { to: '/admin/contact', icon: 'material-symbols:mail-outline', label: 'Liên hệ' },
   { to: '/admin/social', icon: 'material-symbols:share-outline', label: 'Mạng xã hội' },
   { to: '/admin/seo', icon: 'material-symbols:travel-explore-outline', label: 'SEO' },

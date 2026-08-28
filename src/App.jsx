@@ -3,6 +3,7 @@ import Layout from './components/Layout/Layout';
 import Home from './pages/Home';
 import Page404 from './components/404/Page404';
 import BlogDetails from './components/Blog/BlogDetails';
+import CvPage from './pages/CvPage';
 import AdminLogin from './pages/admin/AdminLogin';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminHero from './pages/admin/AdminHero';
@@ -13,6 +14,7 @@ import AdminProjects from './pages/admin/AdminProjects';
 import AdminContact from './pages/admin/AdminContact';
 import AdminSocial from './pages/admin/AdminSocial';
 import AdminSeo from './pages/admin/AdminSeo';
+import AdminCv from './pages/admin/AdminCv';
 import AdminLayout from './components/Admin/AdminLayout';
 import ProtectedRoute from './components/Admin/ProtectedRoute';
 import { ThemeProvider } from './context/ThemeContext';
@@ -30,6 +32,8 @@ function App() {
         <BrandingProvider>
           <BrowserRouter>
           <Routes>
+            <Route path="/cv" element={<CvPage />} />
+
             <Route path="/" element={<Layout />}>
               <Route index element={<Home />} />
               <Route path="blog/blog-details" element={<BlogDetails />} />
@@ -48,6 +52,7 @@ function App() {
                 <Route path="contact" element={<AdminContact />} />
                 <Route path="social" element={<AdminSocial />} />
                 <Route path="seo" element={<AdminSeo />} />
+                <Route path="cv" element={<AdminCv />} />
               </Route>
             </Route>
           </Routes>
